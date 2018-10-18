@@ -13,11 +13,14 @@ class NavIcon extends Component{
         if(this.state.openClass){
             mySidenavWidth = "fullWidth";
         }
-        const menuIcon = <div id="nav-icon1" onClick={this.toggleClass} className={this.state.openClass ? 'open' : ''}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        // const menuIcon2 = <div id="nav-icon1" onClick={this.toggleClass} className={this.state.openClass ? 'open' : ''}>
+        // <span></span>
+        // <span></span>
+        // <span></span>
+    //   </div>
+        const menuIcon = <button onClick={this.toggleClass} className={this.state.openClass ? 'lines-button x2 close' : 'lines-button x2'} role="button" type="button" aria-label="Toggle Navigation">
+                            <span class="lines"></span>
+                        </button>
         return (
             <div className="navbar navbar-custom">
                 <div className="nav-container">
@@ -25,7 +28,7 @@ class NavIcon extends Component{
                         <Link to='/app'>Mahipal Reddy</Link>
                     </div>
 
-                    <div id="mySidenav" className={`sidenav + ${mySidenavWidth}`}>
+                    {/* <div id="mySidenav" className={`sidenav + ${mySidenavWidth}`}>
                         <div className="navbar navbar-custom">
                             <div className="nav-container">
                                 <a id='menu-btn'>{menuIcon}</a>
@@ -38,8 +41,8 @@ class NavIcon extends Component{
                             <Link className="menu-item" to="/work">Work</Link>
                             <Link className="menu-item" to="/contact">Say Hello</Link>
                         </div>
-                    </div>
-                    <a id="menu-btn">{menuIcon}</a>
+                    </div> */}
+                    <a id="nav-menu-link">{menuIcon}</a>
                 </div>
             </div>
     );

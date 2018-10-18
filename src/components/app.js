@@ -12,7 +12,7 @@ class App extends Component {
       <div className="app-body">
         <div className="app-header"><NavIconComp  /></div>
         
-          <div className="intro col-md-6">
+          {/* <div className="intro col-md-6">
             <h1 className="intro-text">
               <span>Hello, I'm </span>
               <span className="name">Mahipal Reddy</span>
@@ -24,7 +24,7 @@ class App extends Component {
           <div className="right-arrow">
             <a><Link to='/about'><i class="fas fa-angle-right fa-2x"></i></Link></a>
           </div>
-          <div className="app-footer"></div>
+          <div className="app-footer"></div> */}
           
       </div>
     );
