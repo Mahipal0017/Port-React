@@ -52,17 +52,113 @@
 }
 
 
-.page-header {
+#page-header {
     position: fixed;
     width: 100%;
     display: block;
     z-index: 100;
-    display: inline-block;
-    background-color: white;
 }
-.hidden {
-    display:hidden;
-}  
+
+#page-header nav{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+}
+
+#page-header nav {
+    position: fixed;
+    background-color: #333;
+    z-index: 100;
+    padding: 10% 0;
+    -moz-transition: -moz-transform .45s cubic-bezier(.45,0,0,1);
+    -o-transition: -o-transform .45s cubic-bezier(.45,0,0,1);
+    -webkit-transition: -webkit-transform .45s cubic-bezier(.45,0,0,1);
+    transition: transform .45s cubic-bezier(.45,0,0,1);
+}
+
+#page-header nav:before {
+    content: "for a quick search just start typing ..";
+    position: absolute;
+    bottom: 5%;
+    left: calc(50% - 150px);
+    width: 300px;
+    color: #8a8a8a;
+    text-align: center;
+    font-size: 13px;
+    -moz-transition: -moz-transform .2s ease-out .9s,opacity .1s ease-out .95s;
+    -o-transition: -o-transform .2s ease-out .9s,opacity .1s ease-out .95s;
+    -webkit-transition: -webkit-transform .2s ease-out,opacity .1s ease-out;
+    -webkit-transition-delay: .9s,.95s;
+    transition: transform .2s ease-out .9s,opacity .1s ease-out .95s;
+}
+
+#page-header.hidden nav {
+    -moz-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+
+#page-header.hidden nav:before {
+    opacity: 0;
+    -moz-transform: translate3d(0,30px,0);
+    -ms-transform: translate3d(0,30px,0);
+    -webkit-transform: translate3d(0,30px,0);
+    transform: translate3d(0,30px,0);
+}
+
+
+
+#page-header nav a {
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #5a5a5a;
+    text-decoration: none;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: calc(100% / 4);
+    position: relative;
+    font-size: 2em;
+    background-color: rgba(0,0,0,.02);
+    overflow: hidden;
+    -moz-transition: -moz-transform .55s cubic-bezier(0,.35,0,1),color .15s ease-out .1s;
+    -o-transition: -o-transform .55s cubic-bezier(0,.35,0,1),color .15s ease-out .1s;
+    -webkit-transition: -webkit-transform .55s cubic-bezier(0,.35,0,1),color .15s ease-out;
+    -webkit-transition-delay: 0s,.1s;
+    transition: transform .55s cubic-bezier(0,.35,0,1),color .15s ease-out .1s;
+    @include extraSmallOnly{
+        font-size: 1.4rem;
+    }
+    &.active{
+        color: #9f9f9f;
+    }
+}
+
+a {
+    font-family: MontSerrat,Tahoma,Arial,sans-serif;
+    font-weight: 700;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+#page-header nav a.active {
+    color: #9f9f9f;
+}
+
+#page-header nav a:nth-child(1) {
+    -moz-transition-delay: .36s;
+    -o-transition-delay: .36s;
+    -webkit-transition-delay: .36s;
+    transition-delay: .36s;
+}
 
 // ------------------------------ HAMBURGER ICON ---------------------------- //
 .burger {

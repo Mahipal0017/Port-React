@@ -38,11 +38,11 @@ class NavIcon extends Component{
             <div>
             <header id="page-header" className={this.state.isHidden ? 'hidden' : ''} data-title="Full Stack Web Developer">
                 <nav>
-                    <Link className="menu-item" to="/about">About</Link>
-                    <Link className="menu-item" to="/whatido">What I Do</Link>
-                    <Link className="menu-item" to="/skills">Skills</Link>
-                    <Link className="menu-item" to="/work">Work</Link>
-                    <Link className="menu-item" to="/contact">Say Hello</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/whatido">What I Do</Link>
+                    <Link to="/skills">Skills</Link>
+                    <Link to="/work">Work</Link>
+                    <Link to="/contact">Say Hello</Link>
                 </nav>
                 {burgerIcon}
             </header>
