@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavIconComp from './common/navIcon';
+import NavBar from './common/navBar';
 import WorkItem from './workItem';
 
 const work = () => {
     return (
         <div>
-            <div className=""><NavIconComp /></div>
+            <div className=""><NavBar /></div>
             <div className="work-page text-center">
                 <h2>Work</h2>
                 <hr />

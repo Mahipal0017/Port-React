@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import '../styles/App.scss';
 import 'react-circular-progressbar/dist/styles.css';
-import NavIconComp from './common/navIcon';
+import NavBar from './common/navBar';
 import backgroundImg from '../extras/img/bodybackground.jpg';
 
 class App extends Component {
   render() {
     return (
       <div className="app-body">
-        <div className="app-header"><NavIconComp  /></div>
+        <div className="app-header"><NavBar /></div>
         
           {/* <div className="intro col-md-6">
             <h1 className="intro-text">

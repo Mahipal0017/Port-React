@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Button } from 'reactstrap';
-import NavIconComp from './common/navIcon';
+import NavBar from './common/navBar';
 
 import Input from './UI/input';
 
@@ -9,7 +9,7 @@ const contact = () => {
     return (
         <div>
         <div className='contact-page'>  
-            <div className=""><NavIconComp /></div>
+            <div className=""><NavBar /></div>
             <div className="contact">
                 <div className="text-center">
                     <h2>Contact</h2>

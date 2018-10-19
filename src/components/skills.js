@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Progress } from 'reactstrap';
 // import {Progress} from 'react-sweet-progress';
-import NavIconComp from './common/navIcon';
+import NavBar from './common/navBar';
 
 const skills = () => {
     return (
         <div>
-        <div className="app-header"><NavIconComp /></div>
+        <div className="app-header"><NavBar /></div>
         <div className="skills text-center"> <h2>Core Skills</h2></div>
         <div className="progress-bars-container">
             <Row>

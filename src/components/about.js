@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Button } from 'reactstrap';
-import NavIconComp from './common/navIcon';
+import NavBar from './common/navBar';
 import profileImage from '../extras/img/profile.jpeg';
 import bitmojiImage from '../extras/img/bitmoji.jpg';
 import Resume from '../extras/Mahipal-Resume.docx';
@@ -19,7 +19,7 @@ class About extends Component {
     render(){
         return (
             <div>
-                <div className="app-header"><NavIconComp /></div>
+                <div className="app-header"><NavBar /></div>
                 <div className="text-center">
                     <h2>About Me</h2>
                     <hr />

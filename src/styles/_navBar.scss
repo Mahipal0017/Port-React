@@ -1,3 +1,4 @@
+
 @import 'mixins';
 
 .navbar{
@@ -199,9 +200,11 @@
 #page-header nav a.active {
     color: #9f9f9f;
 }
+
 #page-header nav a:hover {
     color: #7f7f7f;
 }
+
 #page-header nav a {
     -moz-transition-delay: .36s;
     -o-transition-delay: .36s;
@@ -220,7 +223,7 @@
     width: 90%;
     max-width: 600px;
     min-height: 45px;
-    max-height:120px;
+    max-height:125px;
     margin: 0 auto;
     height: calc(100% / 4);
     position: relative;
@@ -233,6 +236,7 @@
     -webkit-transition-delay: 0s,.1s;
     transition: transform .55s cubic-bezier(0,.35,0,1),color .15s ease-out .1s;
 }
+
 a {
     font-family: MontSerrat,Tahoma,Arial,sans-serif;
     font-weight: 700;
@@ -246,10 +250,12 @@ a:-webkit-any-link {
     cursor: pointer;
     text-decoration: underline;
 }
+
 body {
     font-family: Lato,Helvetica,Arial,sans-serif;
     -webkit-tap-highlight-color: rgba(201,224,253,0);
 }
+
 body {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -263,6 +269,7 @@ body {
     background-color: #2a2a2a;
     text-align: center;
 }
+
 html {
     overflow-x: hidden;
     overflow-y: hidden;

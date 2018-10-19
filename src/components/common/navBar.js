@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class NavIcon extends Component{
+class NavBar extends Component{
     state = {
         isHidden: true,
         addClass1: false,
@@ -73,4 +73,4 @@ class NavIcon extends Component{
 }
 };
 
-export default NavIcon;
+export default NavBar;
