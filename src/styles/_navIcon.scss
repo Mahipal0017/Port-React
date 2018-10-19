@@ -1,44 +1,10 @@
-$extraSmall: "(max-width: 576px)";
-$small: "(min-width: 576px)";
-$medium: "(min-width: 768px)";
-$large: "(min-width: 992px)";
-$large: "(min-width: 1200px)";
-
-$medium-width: 768px;
-$large-width: 992px;
-$extraLarge-width: 1200px;
-
-@mixin medium {
-  @media (min-width: #{$medium-width}){
-    @content;
-  }
-}
-
-@mixin mediumToLarge {
-    @media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
-      @content;
-    }
-  }
-
-@mixin large {
-  @media (min-width: #{$large-width}) {
-    @content;
-  }
-}
-
-@mixin extraLarge {
-    @media (min-width: #{$extraLarge-width}) {
-      @content;
-    }
-}
-
 .navbar{
     min-height: 50px;
     margin-bottom: 20px;
 }
 .navbar-custom{
     border-color: transparent;
-    @include medium {
+    @include mediumAndUp {
         background-color: transparent;
         padding: 25px 0;
         -webkit-transition: padding 0.3s;
@@ -53,10 +19,10 @@ $extraLarge-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     border: 1px solid black;
-    @include medium {
+    @include mediumAndUp {
         width: 750px;
     }
-    @include large {
+    @include largeAndUp {
         width: 970px;
     }
     @include extraLarge{
@@ -74,7 +40,7 @@ $extraLarge-width: 1200px;
         text-decoration: none;
         background-color: transparent;
         font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-        @include medium {
+        @include mediumAndUp {
             font-size: 2em;
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
@@ -84,23 +50,36 @@ $extraLarge-width: 1200px;
     }
 }
 
-#nav-menu-link{
-    float: right;
-    
-}
-
 
 // ------------------------------ HAMBURGER ICON ---------------------------- //
-
 .burger {
     position: fixed;
-    right: 83px;
     top: 35px;
     z-index: 9998;
     cursor: pointer;
     padding: 5px 4px;
     background-color: transparent;
     user-select: none;
+    @include extraSmallOnly {
+        right: 10px;
+        top: auto;
+        bottom: 30px;
+        background-color: #232323;
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: 0 0 3px rgba(0,0,0,.15);
+        width: 59px;
+        height: 59px;
+    }
+    @include mediumAndLess {
+        right: 13px;
+    }
+    @include largeAndLess {
+        right: 23px;
+    }
+    @include largeAndUp {
+        right: 38px;
+    }
 }
 
 .burger i {
@@ -109,10 +88,15 @@ $extraLarge-width: 1200px;
     height: 2px;
     margin: 8px;
     background-color: #7a7a7a;
+    @include mediumAndLess {
+        width: 24px;
+    }
 }
-i{
+
+i {
     font-style: italic;
 }
+
 .burger i:nth-child(n) {
     -moz-transition: -moz-transform .45s cubic-bezier(.43,.77,.15,1.5),background .3s ease;
     -o-transition: -o-transform .45s cubic-bezier(.43,.77,.15,1.5),background .3s ease;
