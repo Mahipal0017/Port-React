@@ -5,7 +5,8 @@ class NavIcon extends Component{
     state = {
         isHidden: true,
         addClass1: false,
-        addClass2: false
+        addClass2: false,
+        isHovered: false,
     }
     
     toggleClass = () => {
@@ -26,9 +27,22 @@ class NavIcon extends Component{
         this.toggleClass();
     }
 
-    render(){ 
+    handleHover = () => {
+        this.setState(state => {
+            return {isHovered:!state.isHovered}
+        });
+    }
+
+    render(){
+        const burgerClasses = this.state.addClass1 ? (this.state.addClass2 ? 'burger state-1 state-2' : 'burger state-1') : 'burger';
+        const hoverClass = this.state.isHovered ? `${burgerClasses} hover` : burgerClasses;
+        console.log('hoverclass', hoverClass);
         const burgerIcon = 
-            (   <div onClick={this.addClassNames} className={this.state.addClass1 ? (this.state.addClass2 ? 'burger state-1 state-2' : 'burger state-1') : 'burger'}>
+            (   <div onClick={this.addClassNames}
+                    className= {hoverClass}
+                    onMouseEnter={this.handleHover}
+                    onMouseLeave={this.handleHover}
+                    >
                     <i></i>
                     <i></i>
                     <i></i>
@@ -38,11 +52,11 @@ class NavIcon extends Component{
             <div>
             <header id="page-header" className={this.state.isHidden ? 'hidden' : ''} data-title="Full Stack Web Developer">
                 <nav>
-                    <Link to="/about">About</Link>
-                    <Link to="/whatido">What I Do</Link>
-                    <Link to="/skills">Skills</Link>
-                    <Link to="/work">Work</Link>
-                    <Link to="/contact">Say Hello</Link>
+                    <Link to="/about"><span>About</span></Link>
+                    <Link to="/whatido"><span>What I Do</span></Link>
+                    <Link to="/skills"><span>Skills</span></Link>
+                    <Link to="/work"><span>Work</span></Link>
+                    <Link to="/contact"><span>Say Hello</span></Link>
                 </nav>
                 {burgerIcon}
             </header>
@@ -50,7 +64,7 @@ class NavIcon extends Component{
             <div className="navbar navbar-custom">
                 <div className="nav-container">
                     <div className="nav-name-link" hidden={this.props.dontShowHomeIcon ? true : false}>
-                        <Link to='/app'>Mahipal Reddy</Link>
+                        <Link className="name" to='/app'>Mahipal Reddy</Link>
                     </div>                    
                 </div>
             </div>
