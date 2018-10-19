@@ -8,17 +8,13 @@
 
 
 
-
 body {
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background-image: linear-gradient(to bottom, white 0%,white 40%,rgb(58, 62, 174) 40%,rgb(58, 62, 174) 60%,rgb(58, 62, 174) 100%);
-  background-attachment:fixed;
-  background-repeat: no-repeat;
-  font-family:"Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  max-width: 1124px;
-  margin: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75em;
+  color: #8a8a8a;
+  background-color: #2a2a2a;
+  text-align: center;
 }
 
 .be-center {

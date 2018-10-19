@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 
 class NavIcon extends Component{
     state = {
-        openClass: false,
+        isHidden: true,
         addClass1: false,
         addClass2: false
     }
     
     toggleClass = () => {
-        this.setState({openClass: !this.state.openClass});
+        this.setState(state => {
+            return {isHidden: !state.isHidden}
+        });
     }
     
     addClassNames = () => {
@@ -21,24 +23,10 @@ class NavIcon extends Component{
                 return { addClass2: !state.addClass2 }
             });
         }, 500);
+        this.toggleClass();
     }
 
     render(){ 
-        let mySidenavWidth = "noWidth";
-        if(this.state.openClass){
-            mySidenavWidth = "fullWidth";
-        }
-        // const menuIcon2 = (
-        //      <div id="nav-icon1" onClick={this.toggleClass} className={this.state.openClass ? 'open' : ''}>
-        //          <span></span>
-        //          <span></span>
-        //          <span></span>
-        //      </div> )
-        
-        // const menuIcon = <button onClick={this.toggleClass} className={this.state.openClass ? 'lines-button x2 close' : 'lines-button x2'} role="button" type="button" aria-label="Toggle Navigation">
-        //                     <span class="lines"></span>
-        //                 </button>
-
         const burgerIcon = 
             (   <div onClick={this.addClassNames} className={this.state.addClass1 ? (this.state.addClass2 ? 'burger state-1 state-2' : 'burger state-1') : 'burger'}>
                     <i></i>
@@ -48,7 +36,14 @@ class NavIcon extends Component{
 
         return (
             <div>
-            <header id="page-header" class="hidden" data-title="Full Stack Web Developer">
+            <header id="page-header" className={this.state.isHidden ? 'hidden' : ''} data-title="Full Stack Web Developer">
+                <nav>
+                    <Link className="menu-item" to="/about">About</Link>
+                    <Link className="menu-item" to="/whatido">What I Do</Link>
+                    <Link className="menu-item" to="/skills">Skills</Link>
+                    <Link className="menu-item" to="/work">Work</Link>
+                    <Link className="menu-item" to="/contact">Say Hello</Link>
+                </nav>
                 {burgerIcon}
             </header>
             
@@ -56,23 +51,7 @@ class NavIcon extends Component{
                 <div className="nav-container">
                     <div className="nav-name-link" hidden={this.props.dontShowHomeIcon ? true : false}>
                         <Link to='/app'>Mahipal Reddy</Link>
-                    </div>
-
-                    {/* <div id="mySidenav" className={`sidenav + ${mySidenavWidth}`}>
-                        <div className="navbar navbar-custom">
-                            <div className="nav-container">
-                                <a id='menu-btn'>{menuIcon}</a>
-                            </div>
-                        </div>
-                        <div className="menu-items">
-                            <Link className="menu-item" to="/about">What I do</Link>
-                            <Link className="menu-item" to="/about">About</Link>
-                            <Link className="menu-item" to="/skills">Skills</Link>
-                            <Link className="menu-item" to="/work">Work</Link>
-                            <Link className="menu-item" to="/contact">Say Hello</Link>
-                        </div>
-                    </div> */}
-                    
+                    </div>                    
                 </div>
             </div>
             </div>

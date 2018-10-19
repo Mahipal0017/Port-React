@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .navbar{
     min-height: 50px;
     margin-bottom: 20px;
@@ -18,7 +20,6 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    border: 1px solid black;
     @include mediumAndUp {
         width: 750px;
     }
@@ -50,6 +51,18 @@
     }
 }
 
+
+.page-header {
+    position: fixed;
+    width: 100%;
+    display: block;
+    z-index: 100;
+    display: inline-block;
+    background-color: white;
+}
+.hidden {
+    display:hidden;
+}  
 
 // ------------------------------ HAMBURGER ICON ---------------------------- //
 .burger {
