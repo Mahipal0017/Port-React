@@ -4,24 +4,54 @@ import { Link } from 'react-router-dom';
 class NavIcon extends Component{
     state = {
         openClass: false,
+        addClass1: false,
+        addClass2: false
     }
+    
     toggleClass = () => {
         this.setState({openClass: !this.state.openClass});
     }
+    
+    addClassNames = () => {
+        this.setState(state => {
+            return { addClass1: !state.addClass1 }
+        });
+        setTimeout(() => {
+            this.setState(state => {
+                return { addClass2: !state.addClass2 }
+            });
+        }, 500);
+    }
+
     render(){ 
         let mySidenavWidth = "noWidth";
         if(this.state.openClass){
             mySidenavWidth = "fullWidth";
         }
-        // const menuIcon2 = <div id="nav-icon1" onClick={this.toggleClass} className={this.state.openClass ? 'open' : ''}>
-        // <span></span>
-        // <span></span>
-        // <span></span>
-    //   </div>
-        const menuIcon = <button onClick={this.toggleClass} className={this.state.openClass ? 'lines-button x2 close' : 'lines-button x2'} role="button" type="button" aria-label="Toggle Navigation">
-                            <span class="lines"></span>
-                        </button>
+        // const menuIcon2 = (
+        //      <div id="nav-icon1" onClick={this.toggleClass} className={this.state.openClass ? 'open' : ''}>
+        //          <span></span>
+        //          <span></span>
+        //          <span></span>
+        //      </div> )
+        
+        // const menuIcon = <button onClick={this.toggleClass} className={this.state.openClass ? 'lines-button x2 close' : 'lines-button x2'} role="button" type="button" aria-label="Toggle Navigation">
+        //                     <span class="lines"></span>
+        //                 </button>
+
+        const burgerIcon = 
+            (   <div onClick={this.addClassNames} className={this.state.addClass1 ? (this.state.addClass2 ? 'burger state-1 state-2' : 'burger state-1') : 'burger'}>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div> )
+
         return (
+            <div>
+            <header id="page-header" class="hidden" data-title="Full Stack Web Developer">
+                {burgerIcon}
+            </header>
+            
             <div className="navbar navbar-custom">
                 <div className="nav-container">
                     <div className="nav-name-link" hidden={this.props.dontShowHomeIcon ? true : false}>
@@ -42,8 +72,9 @@ class NavIcon extends Component{
                             <Link className="menu-item" to="/contact">Say Hello</Link>
                         </div>
                     </div> */}
-                    <a id="nav-menu-link">{menuIcon}</a>
+                    
                 </div>
+            </div>
             </div>
     );
 }
