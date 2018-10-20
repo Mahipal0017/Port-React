@@ -9,6 +9,12 @@ $extraLarge-width: 1200px;
     }
 }
 
+@mixin smallAndUp{
+    @media (min-width: #{$small-width}){
+        @content;
+    }
+}
+
 @mixin mediumAndUp {
   @media (min-width: #{$medium-width}){
     @content;

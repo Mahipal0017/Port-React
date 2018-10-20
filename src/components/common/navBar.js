@@ -64,7 +64,7 @@ class NavBar extends Component{
             <div className="navbar navbar-custom">
                 <div className="nav-container">
                     <div className="nav-name-link" hidden={this.props.dontShowHomeIcon ? true : false}>
-                        <Link className="name" to='/app'>Mahipal Reddy</Link>
+                        <Link className="name" to='/home'>Mahipal Reddy</Link>
                     </div>                    
                 </div>
             </div>

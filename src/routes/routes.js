@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import App from '../components/app';
-import WhatIDo from '../components/app';
+import Home from '../components/home';
+import WhatIDo from '../components/whatIDo';
 import Skills from '../components/skills';
 import About from '../components/about';
 import Work from '../components/work';
@@ -14,7 +14,7 @@ const routes = () => {
     <BrowserRouter>
         <Switch>
             <Route exact path='/' component={Login} />
-            <Route path="/app" component={App} />
+            <Route path="/home" component={Home} />
             <Route path="/whatido" component={WhatIDo} />
             <Route path="/about" component={About} />
             <Route path="/skills" component={Skills} />

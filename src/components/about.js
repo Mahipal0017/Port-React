@@ -53,7 +53,7 @@ Below you'll find a list of some of my skills:</p>
                         <a role="button" href={Resume} download=""><Button color='primary' outline>Download Resume</Button></a>
                     </Col>
                 </Row>
-                <div className="left-arrow"><a><Link to='/app'><i class="fas fa-angle-left fa-2x"></i></Link></a></div>
+                <div className="left-arrow"><a><Link to='/home'><i class="fas fa-angle-left fa-2x"></i></Link></a></div>
                 <div className="right-arrow"><a><Link to='/skills'><i class="fas fa-angle-right fa-2x"></i></Link></a></div>
             </div>
         );

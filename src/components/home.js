@@ -6,11 +6,25 @@ import 'react-circular-progressbar/dist/styles.css';
 import NavBar from './common/navBar';
 import backgroundImg from '../extras/img/bodybackground.jpg';
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
-      <div className="app-body">
-        <div className="app-header"><NavBar /></div>
+      <div >
+        <NavBar />
+        <div className="main-container">
+          <div className="intro-text-container">
+            <h1 className="intro-heading">
+            Full Stack
+            <br />
+            <b>React JS </b> 
+             | 
+            <b> Node JS</b>
+            <br/>
+            developer
+            </h1>
+            <Link to="/whatido" class="btn home-btn">WHAT I DO</Link>
+          </div>
+        </div>
         
           {/* <div className="intro col-md-6">
             <h1 className="intro-text">
@@ -31,4 +45,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
