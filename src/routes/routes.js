@@ -20,6 +20,7 @@ const routes = () => {
             <Route path="/skills" component={Skills} />
             <Route path="/work" component={Work} />
             <Route path="/contact" component={Contact} />
+            <Route render={ () => <h1>404 Error</h1> } />
         </Switch>
     </BrowserRouter>
     );

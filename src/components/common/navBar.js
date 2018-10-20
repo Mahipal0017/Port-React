@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import MediaQuery from 'react-responsive';
 
 class NavBar extends Component{
     state = {
@@ -36,7 +37,7 @@ class NavBar extends Component{
     render(){
         const burgerClasses = this.state.addClass1 ? (this.state.addClass2 ? 'burger state-1 state-2' : 'burger state-1') : 'burger';
         const hoverClass = this.state.isHovered ? `${burgerClasses} hover` : burgerClasses;
-        console.log('hoverclass', hoverClass);
+
         const burgerIcon = 
             (   <div onClick={this.addClassNames}
                     className= {hoverClass}
@@ -48,12 +49,22 @@ class NavBar extends Component{
                     <i></i>
                 </div> )
 
+        const homeLink = <MediaQuery minDeviceWidth={568}>
+        { matches => {
+            if(matches) {
+                return "Mahipal Reddy";
+            } else {
+                return <i className="fas fa-4x fa-user-tie core-1"></i>;
+            }
+        } }
+        </MediaQuery>
+
         return (
             <div>
             <header id="page-header" className={this.state.isHidden ? 'hidden' : ''} data-title="Full Stack Web Developer">
                 <nav>
-                    <Link to="/about"><span>About</span></Link>
                     <Link to="/whatido"><span>What I Do</span></Link>
+                    <Link to="/about"><span>About</span></Link>
                     <Link to="/skills"><span>Skills</span></Link>
                     <Link to="/work"><span>Work</span></Link>
                     <Link to="/contact"><span>Say Hello</span></Link>
@@ -64,7 +75,9 @@ class NavBar extends Component{
             <div className="navbar navbar-custom">
                 <div className="nav-container">
                     <div className="nav-name-link" hidden={this.props.dontShowHomeIcon ? true : false}>
-                        <Link className="name" to='/home'>Mahipal Reddy</Link>
+                        <Link className="name" to='/home'>
+                            {homeLink}
+                        </Link>
                     </div>                    
                 </div>
             </div>

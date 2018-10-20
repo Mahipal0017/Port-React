@@ -1,6 +1,8 @@
 @import "bootstrap/scss/bootstrap.scss";
 @import 'home';
+@import 'whatIDo';
 @import 'navBar';
+@import 'pageControlArrows';
 @import 'input';
 @import 'loginForm';
 @import 'skills';
@@ -15,6 +17,7 @@ body {
   color: #8a8a8a;
   background-color: #2a2a2a;
   text-align: center;
+  overflow-y: scroll;
 }
 *, :after, :before {
   -moz-box-sizing: border-box;
@@ -26,10 +29,81 @@ body {
   margin: 0;
 }
 
-.be-center {
-  margin-left: auto;
+.main-container {
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
+  margin-left: auto;
+  @include mediumAndUp{
+    width: 730px;
+  }
+  @include largeAndUp{
+    width: 960px;
+  }
+  @include extraLarge{
+      width: 1160px;
+  }  
 }
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #777777;
+}
+
+.core-1{
+  color: #fed136;
+}
+
+.hidden-xs {
+  @include extraSmallOnly {
+    display: none!important;
+  }
+}
+
+.hidden-sm {
+  @include mediumAndLess {
+    display: none!important;
+  }
+}
+
+.hidden-md {
+  @include largeAndLess {
+    display: none!important;
+  }
+}
+
+// For all page headings
+.main-container {
+  .main-heading {
+      font-size: 40px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+  }
+  .main-subheading{
+      font-size: 16px;
+      font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: none;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 75px;
+  }   
+}
+
+
+
+
+
+
+
+
+
+
 
 .home-icon {
   position: relative;

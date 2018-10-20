@@ -1,19 +1,6 @@
 @import 'mixins';
 
 .main-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    @include extraLarge{
-        width: 1160px;
-    }
-    @include largeAndUp{
-        width: 960px;
-    }
-    @include mediumAndUp{
-        width: 730px;
-    }
     .intro-text-container{
         padding-top: 70px;
         padding-bottom: 50px;
@@ -68,6 +55,7 @@
             border-radius: 3px;
             font-size: 18px;
             padding: 20px 40px;
+            border-bottom: 3px solid #feb004;
             &:hover{
                 color: white;
                 background-color: #fec503;

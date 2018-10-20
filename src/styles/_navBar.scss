@@ -6,7 +6,7 @@
 }
 .navbar-custom{
     border-color: transparent;
-    @include mediumAndUp {
+    @include smallAndUp {
         background-color: transparent;
         padding: 25px 0;
         -webkit-transition: padding 0.3s;
@@ -27,6 +27,10 @@
     float: left;
     padding: 15px 15px;
     font-size: 18px;
+    display:none;
+    @include smallAndUp{
+        display: inline;
+    }
     .name{
         color: #fed136;
         outline: none;
@@ -236,6 +240,9 @@
     transition: transform .55s cubic-bezier(0,.35,0,1),color .15s ease-out .1s;
     @include extraSmallOnly{
         max-height:125px;
+    }
+    @media (max-width: 325px){
+        max-height: 100px;
     }
 }
 
