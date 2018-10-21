@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Button } from 'reactstrap';
 
-import NavBar from "./common/navBar";
+import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 
 import profileImage from '../extras/img/profile.jpeg';
@@ -13,9 +13,9 @@ class About extends Component {
     render(){
         return (
             <div className="page-content">
-                <PageControls goto="/skills" spanN="about" classN="next-page-arrow" />
+                <PageControls goto="/questionPage" spanN="questionPage" classN="next-page-arrow" />
                 <PageControls goto="/whatido" spanN="what i do" classN="prev-page-arrow" />
-                <NavBar />
+                <Navigation />
                 <div className="main-container">
                     <Row>
                         <Col className="text-center">

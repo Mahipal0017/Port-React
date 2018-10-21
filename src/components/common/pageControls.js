@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PageControls = (props) => {
-    const location = props.goto;    //location name
-    const classN = props.classN;    //next-page-arrow or prev-page-arrow
-    const spanN = props.spanN       //text that to be displayed when hovered
+    //location name
+    //next-page-arrow or prev-page-arrow
+    //text that to be displayed when hovered
+    const { goto, classN, spanN } = props;
     return (
         <div className="page-control">
-            <Link to={location} className={classN}>
+            <Link to={goto} className={classN}>
                 <span>{spanN}</span>
                 <em></em>
             </Link>

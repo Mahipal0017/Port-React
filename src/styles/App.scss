@@ -8,10 +8,11 @@
 @import 'home';
 @import 'whatIDo';
 @import 'about';
+@import 'skills';
 
 @import 'input';
 @import 'loginForm';
-@import 'skills';
+@import 'questionPage';
 
 
 
@@ -122,18 +123,10 @@ body {
   background: #555; 
 }
 
-/* Skills Section */
 
-.skills {
-  overflow: hidden;
-}
 
-.skill-item {
-  width: 120px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 3rem;
-}
+
+
 
 /* Work Section */
 /* .work-page {

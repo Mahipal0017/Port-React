@@ -1,10 +1,10 @@
 @import 'mixins';
 
-.navbar{
+.nav{
     min-height: 50px;
     margin-bottom: 20px;
 }
-.navbar-custom{
+.nav-custom{
     border-color: transparent;
     @include smallAndUp {
         background-color: transparent;
@@ -249,6 +249,9 @@
     }
     @media (max-width: 325px){
         max-height: 100px;
+    }
+    &.selected{
+        color: #9f9f9f;
     }
 }
 

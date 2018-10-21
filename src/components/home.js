@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import '../styles/App.scss';
 import 'react-circular-progressbar/dist/styles.css';
-import NavBar from './common/navBar';
+import Navigation from './common/navigation';
 import backgroundImg from '../extras/img/bodybackground.jpg';
 
 class Home extends Component {
   render() {
     return (
       <div >
-        <NavBar />
+        <Navigation />
         <div className="main-container">
           <div className="intro-text-container">
             <h1 className="intro-heading">

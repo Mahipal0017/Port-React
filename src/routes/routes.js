@@ -9,6 +9,8 @@ import About from '../components/about';
 import Work from '../components/work';
 import Contact from '../components/contact';
 import LoginPage from '../components/loginForm';
+import QuestionPage from '../components/questionPage';
+
 
 const routes = () => {
     return (
@@ -19,6 +21,7 @@ const routes = () => {
             <Route path="/home" component={Home} />
             <Route path="/whatido" component={WhatIDo} />
             <Route path="/about" component={About} />
+            <Route path="/questionPage" component={QuestionPage} />
             <Route path="/skills" component={Skills} />
             <Route path="/work" component={Work} />
             <Route path="/contact" component={Contact} />

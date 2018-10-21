@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Progress } from 'reactstrap';
 
-import NavBar from './common/navBar';
+import Navigation from './common/navigation';
 import PageControls from "./common/pageControls";
 
 const skills = () => {
@@ -10,7 +10,7 @@ const skills = () => {
         <div className="page-content">
             <PageControls goto="/work" spanN="my work" classN="next-page-arrow" />
             <PageControls goto="/about" spanN="about" classN="prev-page-arrow" />
-            <NavBar />
+            <Navigation />
             <div className="main-container">
                 <Row>
                     <Col className="text-center">
@@ -22,57 +22,57 @@ const skills = () => {
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="success" value="90">90%</Progress></Col>
-                            <Col md='2'><h4>JavaScript</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>JavaScript</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="success" value="85">85%</Progress></Col>
-                            <Col md='2'><h4>ReactJS</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>ReactJS</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="success" value="90">90%</Progress></Col>
-                            <Col md='2'><h4>Redux</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>Redux</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="info" value="80">80%</Progress></Col>
-                            <Col md='2'><h4>NodeJS</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>NodeJS</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="info" value="75">75%</Progress></Col>
-                            <Col md='2'><h4>Angular 2</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>Angular2</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="success" value="80">80%</Progress></Col>
-                            <Col md='2'><h4>ImmutableJS</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>ImmuatbelJS</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="success" value="90">90%</Progress></Col>
-                            <Col md='2'><h4>Bootstrap4</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>Bootstrap</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="success" value="85">85%</Progress></Col>
-                            <Col md='2'><h4>SCSS</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>SCSS</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="success" value="85">85%</Progress></Col>
-                            <Col md='2'><h4>CSS3</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>CSS3</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="success" value="90">90%</Progress></Col>
-                            <Col md='2'><h4>HTML5</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>HTML5</span></h4></Col>
                         </Row>
                         <Row>
                             <Col md='2'></Col>
                             <Col md='4'><Progress animated color="info" value="80">80%</Progress></Col>
-                            <Col md='2'><h4>AngularJS</h4></Col>
+                            <Col md='2'><h4 className="skill-item"><span>AngularJS</span></h4></Col>
                         </Row>
                     </div>
             </div> 

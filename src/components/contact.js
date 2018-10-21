@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Button } from 'reactstrap';
 
-import NavBar from "./common/navBar";
+import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 import Input from './UI/input';
 
@@ -10,7 +10,7 @@ const contact = () => {
     return (
             <div className="page-content">
                 <PageControls goto="/work" spanN="my work" classN="prev-page-arrow" />
-                <NavBar />
+                <Navigation />
                 <div className="main-container">
                     <Row>
                         <Col className="text-center">
@@ -21,19 +21,19 @@ const contact = () => {
                     <Row className="col-md-9 mt-5 be-center">
                         <Col md='4'>
                             <div className='contact-item1'>
-                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                                <i className="fas fa-map-marker-alt fa-2x"></i>
                                 <p>Jacksonville, Florida</p>
                             </div>
                         </Col>
                         <Col md='4'>
                             <div className='contact-item1'>
-                                <i class="far fa-envelope fa-2x"></i>
+                                <i className="far fa-envelope fa-2x"></i>
                                 <p>mahipalr369@gmail.com</p>
                             </div>
                         </Col>
                         <Col md='4'>
                             <div className='contact-item1'>
-                                <i class="fas fa-phone fa-2x"></i>
+                                <i className="fas fa-phone fa-2x"></i>
                                 <p>+1 712 328 5679</p>
                             </div>
                         </Col>      
@@ -78,8 +78,8 @@ const contact = () => {
                         </div>
                     </div>
                 </div>
-                <div id="footer">
-                    <div className="fnav text-center">
+                <div id="">
+                    <div className="text-center">
                       <p>Copyright &copy; 2015 MahipalReddy </p>
                     </div>
                 </div>

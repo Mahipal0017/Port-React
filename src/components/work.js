@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 
-import NavBar from "./common/navBar";
+import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 
 import WorkItem from './workItem';
@@ -12,7 +12,7 @@ const work = () => {
         <div className="page-content">
                 <PageControls goto="/contact" spanN="say hello" classN="next-page-arrow" />
                 <PageControls goto="/skills" spanN="skills" classN="prev-page-arrow" />
-                <NavBar />
+                <Navigation />
                 <div className="main-container">
                     <Row>
                         <Col className="text-center">

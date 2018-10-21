@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
-import NavBar from "./common/navBar";
+
+import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 
 class whatIDo extends Component {
@@ -9,7 +10,7 @@ class whatIDo extends Component {
         return (
             <div className="page-content">
                 <PageControls goto="/about" spanN="about" classN="next-page-arrow" />
-                <NavBar />
+                <Navigation />
                 <div className="main-container">
                     <Row>
                         <Col className="text-center">
