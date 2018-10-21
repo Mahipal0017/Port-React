@@ -1,0 +1,36 @@
+@import 'mixins';
+
+.about-img-container, .about-text-container{
+    @include mediumAndLess{
+        margin: 15px;
+    }
+}
+.about-img-container{
+    .cartoonImage, .profileImage{
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // -webkit-transform: translate(-50%, -50%);
+        // -ms-transform: translate(-50%, -50%);
+        // transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    .cartoonImage{
+        // display: block;
+        z-index:2;
+        width: 240px;
+        height: 300px;
+    }
+    .profileImage{
+        // position: absolute;
+        width: 240px;
+        height: 300px;
+        z-index: 1;
+        transition: .8s ease-in-out;
+    }
+    &:hover{
+        .profileImage{
+            z-index: 3;
+        }
+    }    
+}

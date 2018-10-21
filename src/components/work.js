@@ -1,21 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from './common/navBar';
+import { Row, Col } from 'reactstrap';
+
+import NavBar from "./common/navBar";
+import PageControls from "./common/pageControls";
+
 import WorkItem from './workItem';
 
 const work = () => {
     return (
-        <div>
-            <div className=""><NavBar /></div>
-            <div className="work-page text-center">
-                <h2>Work</h2>
-                <hr />
-            </div>
-            <div style={{width: '50%'}} className="be-center">
-            <WorkItem />
-            </div>
-            <div className="left-arrow"><a><Link to='/skills'><i class="fas fa-angle-left fa-2x"></i></Link></a></div>
-            <div className="right-arrow"><a><Link to='/contact'><i class="fas fa-angle-right fa-2x"></i></Link></a></div>   
+        <div className="page-content">
+                <PageControls goto="/contact" spanN="say hello" classN="next-page-arrow" />
+                <PageControls goto="/skills" spanN="skills" classN="prev-page-arrow" />
+                <NavBar />
+                <div className="main-container">
+                    <Row>
+                        <Col className="text-center">
+                            <h2 className="main-heading">My Recent Work</h2>
+                            <h5 className="main-subheading"></h5>
+                        </Col>
+                    </Row>
+                    <Row style={{width: '50%'}} className="be-center">
+                        <WorkItem />
+                    </Row>
+                    
+        </div>
         </div>
     );
 };

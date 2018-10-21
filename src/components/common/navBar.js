@@ -76,7 +76,7 @@ class NavBar extends Component{
                 <div className="nav-container">
                     <div className="nav-name-link" hidden={this.props.dontShowHomeIcon ? true : false}>
                         <Link className="name" to='/home'>
-                            {homeLink}
+                            {this.props.isScrolled ? <i className="fas fa-4x fa-user-tie core-1"></i> : "Mahipal Reddy"}
                         </Link>
                     </div>                    
                 </div>
@@ -85,5 +85,9 @@ class NavBar extends Component{
     );
 }
 };
+
+NavBar.defaultProps = {
+    isScrolled : false,
+}
 
 export default NavBar;

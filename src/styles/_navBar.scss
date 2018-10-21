@@ -17,16 +17,21 @@
 }
 .nav-container {
     margin-right: 15px;
-    margin-left: 3rem;
-    @include extraSmallOnly{
-        margin-left: 0.3rem;
+    margin-left: 10px;
+    @include smallAndLess {
+        margin-left: 13px;
+    }
+    @include mediumAndLess {
+        margin-left: 23px;
+    }
+    @include largeAndUp {
+        margin-left: 38px;
     }   
 }
 
 .nav-name-link {
     float: left;
     padding: 15px 15px;
-    font-size: 18px;
     display:none;
     @include smallAndUp{
         display: inline;
@@ -37,8 +42,9 @@
         text-decoration: none;
         background-color: transparent;
         font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+        font-size: 26px;
         @include mediumAndUp {
-            font-size: 2em;
+            // font-size: 2rem;
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
             transition: all 0.3s;
@@ -302,7 +308,7 @@ html {
 // ------------------------------ HAMBURGER ICON ---------------------------- //
 .burger {
     position: fixed;
-    top: 35px;
+    top: 32px;
     z-index: 9998;
     cursor: pointer;
     padding: 5px 4px;
@@ -319,10 +325,10 @@ html {
         width: 59px;
         height: 59px;
     }
-    @include mediumAndLess {
+    @include smallAndLess {
         right: 13px;
     }
-    @include largeAndLess {
+    @include mediumAndLess {
         right: 23px;
     }
     @include largeAndUp {

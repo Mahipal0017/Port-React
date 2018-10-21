@@ -1,12 +1,18 @@
 @import "bootstrap/scss/bootstrap.scss";
-@import 'home';
-@import 'whatIDo';
+@import 'mixins';
+
 @import 'navBar';
 @import 'pageControlArrows';
+
+@import 'login';
+@import 'home';
+@import 'whatIDo';
+@import 'about';
+
 @import 'input';
 @import 'loginForm';
 @import 'skills';
-@import 'mixins';
+
 
 
 
@@ -35,14 +41,14 @@ body {
   margin-right: auto;
   margin-left: auto;
   @include mediumAndUp{
-    width: 730px;
+    width: 720px;
   }
   @include largeAndUp{
     width: 960px;
   }
   @include extraLarge{
-      width: 1160px;
-  }  
+    width: 1140px;
+  }
 }
 
 .text-center {
@@ -64,13 +70,13 @@ body {
 }
 
 .hidden-sm {
-  @include mediumAndLess {
+  @include smallAndLess {
     display: none!important;
   }
 }
 
 .hidden-md {
-  @include largeAndLess {
+  @include mediumAndLess {
     display: none!important;
   }
 }
@@ -96,107 +102,24 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-.home-icon {
-  position: relative;
+// Scroll bar slim style
+::-webkit-scrollbar {
+  width: 4px;
 }
 
-.menuIcon {
-  position: absolute;
-  margin: 0px 40px;
-  right: 0px;
-  transform: scale(0.6);
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
 }
 
-.right-arrow {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transition: 1s ease-out;
-  &:hover {
-    transform: scale(1.5);
-    transition: 1s ease-in;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
 }
 
-.left-arrow {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transition: 1s ease-out;
-  &:hover {
-    transform: scale(1.5);
-    transition: 1s ease-in;
-  }
-}
-
-/* Intro Section */
-
-/* .App {
-  min-height: 100vh;
-  // background: url(./img/bodybackground.jpg) no-repeat;
-  background: #121e1f;
-  background-size: cover;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  position: relative;
-} */
-
-
-
-/* Intro Section - Media Queries */
-@media (min-width: 768px) {
-  .intro {
-    height: 100%;
-    padding: 0;
-    text-align: left;
-    color: rgba(255, 255, 255, 0.952);
-    H1 {
-      font-size: 60px;
-      font-weight: 500;
-      letter-spacing: -2px;
-    }
-    .name {
-      font-weight: 600;
-    }
-    .intro-text {
-      max-width: 75%;
-      p {
-        font-family: 'Lato', sans-serif;
-        font-size: 40px;
-        margin-bottom: 40px;
-        margin-top: 20px;
-      }
-    }
-  }
-}
-
-/* About */
-
-.parent-col {
-  display: flex;
-  justify-content: center;
-}
-
-.profileImage {
-  border-radius: 48%;
-  /* transition: ease(0.5s);
-  -webkit-transition: ease(0.5s);
-  -moz-transition: ease(0.5s);
-  -o-transition: ease(0.5s); */
-  transition: all 0.3s ease-in-out;
-  transition-timing-function: ease-in-out;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 /* Skills Section */

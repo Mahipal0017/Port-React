@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 import NavBar from "./common/navBar";
+import PageControls from "./common/pageControls";
 
 class whatIDo extends Component {
     render() {
         return (
             <div className="page-content">
-                <div className="page-control">
-                    <Link to="/contact" className="next-page-arrow">
-                        <span>About</span>
-                        <em></em>
-                    </Link>
-                </div>
+                <PageControls goto="/about" spanN="about" classN="next-page-arrow" />
                 <NavBar />
                 <div className="main-container">
                     <Row>
