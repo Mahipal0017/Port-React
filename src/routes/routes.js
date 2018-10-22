@@ -8,7 +8,6 @@ import Skills from '../components/skills';
 import About from '../components/about';
 import Work from '../components/work';
 import Contact from '../components/contact';
-import LoginPage from '../components/loginForm';
 import QuestionPage from '../components/questionPage';
 
 
@@ -16,8 +15,7 @@ const routes = () => {
     return (
     <BrowserRouter>
         <Switch>
-            {/* <Route exact path='/' component={Login} /> */}
-            <Route exact path='/' component={LoginPage} />
+            <Route exact path='/' component={Login} />
             <Route path="/home" component={Home} />
             <Route path="/whatido" component={WhatIDo} />
             <Route path="/about" component={About} />

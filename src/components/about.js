@@ -13,7 +13,7 @@ class About extends Component {
     render(){
         return (
             <div className="page-content">
-                <PageControls goto="/questionPage" spanN="questionPage" classN="next-page-arrow" />
+                <PageControls goto="/skills" spanN="skills" classN="next-page-arrow" />
                 <PageControls goto="/whatido" spanN="what i do" classN="prev-page-arrow" />
                 <Navigation />
                 <div className="main-container">
