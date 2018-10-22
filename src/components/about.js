@@ -19,8 +19,8 @@ class About extends Component {
                 <div className="main-container">
                     <Row>
                         <Col className="text-center">
-                            <h2 className="main-heading">About Me</h2>
-                            <h5 className="main-subheading">Hi! I'm Mahi. I'm a software developer based in Florida.</h5>
+                            <h2 className="main-heading">About Mahi</h2>
+                            <h5 className="main-subheading">I'm a software developer based in Florida.</h5>
                         </Col>
                     </Row>
                     <Row className="text-center">

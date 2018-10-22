@@ -9,6 +9,7 @@
 @import 'whatIDo';
 @import 'about';
 @import 'skills';
+@import 'contact';
 
 @import 'input';
 @import 'loginForm';
@@ -41,6 +42,9 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  @include smallAndUp{
+    width: 530px;
+  }
   @include mediumAndUp{
     width: 720px;
   }
@@ -91,6 +95,34 @@ body {
       font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
       text-transform: uppercase;
       font-weight: 700;
+      position:relative;
+  }
+  h2.main-heading:before, h2.main-heading:after{
+    position: absolute;
+    top: 50%;
+    display: block;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.25);
+    content: "";
+    @include extraLarge{
+      width: 30%
+    }
+    @include mediumAndUp{
+      width: 20%;
+    }
+    @include smallAndUp{
+      width: 15%;
+    }
+    @include extraSmallOnly{
+      width: 0px;
+    }
+    
+    
+  }
+  h2.main-heading:before{
+    left: 0;
+  }
+  h2.main-heading:after{
+    right: 0;
   }
   .main-subheading{
       font-size: 16px;

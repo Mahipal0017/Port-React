@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Button } from 'reactstrap';
-import Input from './UI/input';
+import UIInputputFiled from '../components/UI/UIInputField';
+import { getRequiredField } from './modules/ConstraintsHelper';
+import * as Utility from './modules/Utility';
+
 
 import * as actions from '../actions/index';
 
@@ -9,68 +12,65 @@ class Login extends Component {
     state = {
         isSignUp:false,
         loginForm:{
-            email: {
-                elementType: 'input',
-                elementConfig: {
-                    type: 'email',
-                    placeholder: 'Email'
-                },
+            email:{
                 value: '',
-                validations: {
-                    required: true,
-                    isEmail: true
-                },
-                valid: false,
-                touched: false
             },
             password: {
-                elementType: 'input',
-                elementConfig: {
-                    type: 'password',
-                    placeholder: 'Password'
-                },
                 value: '',
-                validations: {
-                    required: true,
-                    minLength: 6
-                },
-                valid: false,
-                touched: false
             }
         }
     }
 
-    validator(value, rules) {
-        let isValid = true;
-        if(!rules) {
-            return true;
+    getErrorMessage = (field, errors) => {
+        if (errors) {
+          let messages = [];
+          if (Array.isArray(field)) {
+            field.map(function(v, index) {
+              if (errors.hasOwnProperty(v)) {
+                messages.push(errors[v].join());
+              }
+            });
+          } else {
+            if (errors.hasOwnProperty(field)) {
+              messages.push(errors[field].join());
+            }
+          }
+          return messages.join();
         }
-        
-        if (rules.required) {
-            isValid = value.trim() !== '' && isValid;
-        }
-
-        if(rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid;
-        }
-
-        if(rules.maxLength) {
-            isValid = value.length >= rules.maxLength && isValid;
-        }
-
-        if(rules.isEmail) {
-            const pattern = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/;
-            isValid = pattern.test(value) && isValid;
-        }
-
-        if(rules.isNumeric) {
-            const pattern = /^\d+$/;
-            isValid = pattern.test(value) && isValid;
-        }
-
-        return isValid;
     }
 
+    runValidations= ste => {
+        let constraints = {};
+        let validatedReturn = null;
+    
+        try {
+            constraints["test"] = getRequiredField();
+            validatedReturn = Utility.confirmConstraints(ste, constraints);
+        } catch(e) {
+          console.log(e);
+        } finally {
+          return validatedReturn; 
+        }
+      }
+
+    update = (key, value) => {
+        let v = {};
+        v[key] = value;
+        this.setState(Object.assign(this.state, v));
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const validationErrors = this.runValidations(this.state);
+   
+        if (validationErrors) {
+          this.setState({error: validationErrors});
+        } else {
+          delete this.state.error;
+          console.log("Passed Validation", this.state)
+        }
+    }
+    
     inputChangedHandler = (event, inputElementId) => {
         const updatedLoginForm = {
             ...this.state.loginForm,
@@ -97,26 +97,6 @@ class Login extends Component {
     }
 
     render() {
-        const formElementsArray = [];
-        for (let key in this.state.loginForm) {
-            formElementsArray.push({
-                id: key,
-                config: this.state.loginForm[key]
-            });
-        }
-
-        const form = formElementsArray.map(formElement => (
-            <Input
-                key={formElement.id}
-                elementType={formElement.config.elementType}
-                elementConfig={formElement.config.elementConfig}
-                value={formElement.config.value}
-                invalid={!formElement.config.valid}
-                shouldValidate={formElement.config.validation}
-                touched={formElement.config.touched}
-                changed={event => this.inputChangedHandler(event,formElement.id)} />
-        ))
-
         let signInUp = 'Register';
         let signInUpButton= 'Sign In';
         
@@ -129,8 +109,27 @@ class Login extends Component {
             <div className="loginForm">
                <form onSubmit={this.submitHandler}>
                     <Button color='link' onClick={this.clickHereHandler}>Click here to {signInUp}</Button>
-                    {form}
-                    <Button color='success' outline> {signInUpButton} </Button>
+                    <UIInputputFiled 
+                        label="TEST"
+                        name="test"
+                        placeholder="test"
+                        defaultValue={this.state.loginForm.email.value}
+                        onValidatedChange= {this.update}
+                        onChangeOverride={true} 
+                        layout="FLAT"
+                        errorMessage={this.getErrorMessage("test", this.state.error)}
+                    />
+                    <UIInputputFiled 
+                        label="TEST"
+                        name="test"
+                        placeholder="test"
+                        defaultValue={this.state.loginForm.password.value}
+                        onValidatedChange= {this.update}
+                        onChangeOverride={true} 
+                        layout="FLAT"
+                        errorMessage={this.getErrorMessage("test", this.state.error)}
+                    />
+                    <Button color='success' outline onClick={this.handleSubmit}> {signInUpButton} </Button>
                 </form> 
             </div>
         );

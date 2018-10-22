@@ -1,0 +1,42 @@
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.submit-btn {
+    font-family: yukari,sans-serif;
+    font-size: 24px;
+    color: #662d91;
+    border: 2px solid #662d91;
+    padding: 10px 15px;
+    background: #ffdc71;
+    position: absolute;
+    display: inline-block;
+    z-index: 2;
+    box-shadow: -6px 5px 0 0 #f7931e, -6px 5px 0 2px #58277e;
+    transition: all .3s ease-out;
+    overflow: none;
+    &:hover {
+        transition: all .2s ease-out;
+        box-shadow: -2px 1px 0 0 #f7931e, -2px 1px 0 2px #58277e;
+        transform: translate3d(-4px,4px,0);
+    }
+}
+
+button.submit-btn {
+    padding: 10px 40px;
+    position: relative;
+}
+
+
+button, select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
