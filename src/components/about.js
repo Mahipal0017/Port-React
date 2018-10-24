@@ -31,12 +31,12 @@ class About extends Component {
                         </Row>
                         <div className="about-text-container text-center pt-5">
                             <p>I'm comfortable throughout the stack, but my passion lies in the front end, at the intersection of application and user.
-                            <br/><br/>I also hold a degree in project management from the Valparaiso University.
                             <br/><br/>I have 4+ years of development experience building products from scratch, developing and integrating with APIs, 
                             working with a variety of frameworks and technologies and more recently developing applications with ReactJS. 
-                            I use my experience to be more than just a coder, connecting business requirements with modern technology.</p>
+                            I use my experience to be more than just a coder, connecting business requirements with modern technology.
+                            I also hold a degree in project management from the Valparaiso University.</p>
                             <br/>
-                            <a role="button" className="pb-5" href={Resume} download=""><Button color='primary' outline>Download Resume</Button></a>
+                            <a role="button" className="pb-5" href={Resume} download=""><button className="core-btn activatedButton" >Download Resume</button></a>
                         </div>
                     </div>
                 </div>

@@ -35,9 +35,8 @@ const work = () => {
                     </Row>
 
                     <Row><p>Client wanted online configurator, where customers can create custom kids jewellery. I was responsible for UI design, interaction design & front-end development.</p></Row>
-                    <Row><p>For czech startup Restu.cz I created mobile version of their site. I was responsible for UI design, interactions & front-end development.</p></Row>
-                    
-        </div>
+                    <Row><p>For czech startup Restu.cz I created mobile version of their site. I was responsible for UI design, interactions & front-end development.</p></Row>   
+            </div>
         </div>
     );
 };

@@ -1,22 +1,25 @@
-import * as actionTypes from './actionTypes';
 import axios from 'axios';
+
+export const LOGIN_FORM_SUBMIT = 'LOGIN_FORM_SUBMIT';
+export const LOGIN_FORM_SUCCESS = 'LOGIN_FORM_SUCCESS';
+export const LOGIN_FORM_FAIL = 'LOGIN_FORM_FAIL';
 
 export const loginFormSubmit = () => {
     return {
-        type: actionTypes.LOGIN_FORM_SUBMIT
+        type: LOGIN_FORM_SUBMIT
     };
 };
 
 export const loginFormSuccess = (data) => {
     return {
-        type: actionTypes.LOGIN_FORM_SUCCESS,
+        type: LOGIN_FORM_SUCCESS,
         data
     };
 };
 
 export const loginFormFail = (error) => {
     return {
-        type: actionTypes.LOGIN_FORM_FAIL,
+        type: LOGIN_FORM_FAIL,
         error
     };
 };

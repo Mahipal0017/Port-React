@@ -85,19 +85,17 @@ class Login extends Component {
                 <div className="loginForm">
                     <Button color='link' onClick={this.handleSignInUp}>Click here to {signInUp}</Button>
                     <UIInputputFiled 
-                        label="Email:"
+                        label="Email"
                         name="email"
-                        placeholder="Enter your email here"
                         defaultValue={this.state.email}
                         onValidatedChange= {this.update}
                         onChangeOverride={true} 
                         errorMessage={this.getErrorMessage("email", this.state.error)}
                     />
                     <UIInputputFiled 
-                        label="Password:"
+                        label="Password"
                         name="password"
                         type="password"
-                        placeholder="Enter your password here"
                         defaultValue={this.state.password}
                         onValidatedChange= {this.update}
                         onChangeOverride={true} 

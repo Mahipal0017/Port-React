@@ -194,7 +194,6 @@ class Contact extends Component{
                             <button className="core-btn fbButton mr-2 mb-3">
                             <i className="fab fa-facebook-f pr-2"></i>FACEBOOK</button>
                             
-                            
                             <button className="core-btn githubButton mr-2 mb-3">
                             <i class="fab fa-github pr-2"></i>GITHUB</button>
 
