@@ -44,7 +44,7 @@ class whatIDo extends Component {
                             <p className="text-muted">
                             REST and SOAP API integration.
                             <br/>
-                            REST API development with Node.js and Loopback.
+                            REST API development with Node.js.
                             </p>
                         </Col>
                         <Col lg="6" className="do-item">

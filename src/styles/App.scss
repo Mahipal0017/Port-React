@@ -1,6 +1,8 @@
 @import "bootstrap/scss/bootstrap.scss";
 @import 'mixins';
 
+@import 'input';
+@import 'button';
 @import 'navBar';
 @import 'pageControlArrows';
 
@@ -11,9 +13,8 @@
 @import 'skills';
 @import 'contact';
 
-@import 'input';
 @import 'loginForm';
-@import 'questionPage';
+@import 'initial';
 
 
 
@@ -56,6 +57,11 @@ body {
   }
 }
 
+.be-center {
+  margin-right: auto;
+  margin-left: auto;
+} 
+
 .text-center {
   text-align: center;
 }
@@ -66,6 +72,10 @@ body {
 
 .core-1{
   color: #fed136;
+}
+
+.core-2{
+  color:#009688;
 }
 
 .hidden-xs {
@@ -156,10 +166,6 @@ body {
 }
 
 
-
-
-
-
 /* Work Section */
 /* .work-page {
   display:flex;
@@ -167,32 +173,6 @@ body {
 } */
 
 /* Contact Section */
-
-.contact-page {
-  // overflow-x: hidden;
-  // overflow-y: hidden;
-  // /* max-width: 1124px; */
-  text-align: center;
-  // margin-right: auto;
-  // margin-left: auto;
-}
-
-.contact {
-  background-color: #474747;
-  color: #ddd;
-  // min-height: 90vh;
-}
-
-.contact-item1, .be-center {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.social > ul li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 1rem;
-}
 
 #footer {
   bottom:0px;

@@ -8,7 +8,7 @@ import Skills from '../components/skills';
 import About from '../components/about';
 import Work from '../components/work';
 import Contact from '../components/contact';
-import QuestionPage from '../components/questionPage';
+import Initial from '../components/initial';
 
 
 const routes = () => {
@@ -19,7 +19,7 @@ const routes = () => {
             <Route path="/home" component={Home} />
             <Route path="/whatido" component={WhatIDo} />
             <Route path="/about" component={About} />
-            <Route path="/questionPage" component={QuestionPage} />
+            <Route path="/initial" component={Initial} />
             <Route path="/skills" component={Skills} />
             <Route path="/work" component={Work} />
             <Route path="/contact" component={Contact} />

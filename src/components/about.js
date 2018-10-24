@@ -23,22 +23,22 @@ class About extends Component {
                             <h5 className="main-subheading">I'm a software developer based in Florida.</h5>
                         </Col>
                     </Row>
-                    <Row className="text-center">
-                        <Col lg='4' className="about-img-container">
-                            <img className="cartoonImage" src={bitmojiImage} alt="Mahipal Reddy" />
-                            <img className="profileImage" src={profileImage} alt="Mahipal Reddy" />
-                        </Col>
-                        <Col lg='8' className="about-text-container">
-                            <p>I'm comfortable throughout the stack, but my passion lies in the front end, at the intersection of the web application and the user. I currently build software for the Florida Blue at the Jacksonville, Florida.</p>
-                            ​Outside of code, I like to create in other ways. From blogging to music-making, photography to guerilla sidewalk chalk street art, I'm always trying new ways of expressing myself. I also like to meditate, talk to strangers, and run lifestyle experiments.
-                            Previously, I've taught code to women, served in the Peace Corps, and management consulted for Fortune 100 companies. I also hold a degree in management from the Valparaiso University.
-                            <p>Hi there! I am a Fullstack developer specialized in React and Node.js.
-                            I've always had a passion for technology and product development - even before becoming a developer, having worn many hats in my career between business development, sales and product management for tech giants and startups in China, Brazil and the US. I use my experience to be more than just a coder, connecting business requirements with modern technology.
-                            I have 4+ years of development experience building fullstack products from scratch, developing and integrating APIs, working with a variety of databases and clould platforms and more recently developing mobile applications with React Native.
-                            </p>
-                            <a role="button" href={Resume} download=""><Button color='primary' outline>Download Resume</Button></a>
-                        </Col>
-                    </Row>
+                    <div className="text-center">
+                        <Row lg='4' className="about-img-container">
+                            <Col xs="12"><img className="cartoonImage" src={bitmojiImage} alt="Mahipal Reddy" /></Col>
+                            <Col sx="12"><h4 className="pt-3">Fast | Efficient | Responsive | Updated</h4></Col>
+                            {/* <img className="profileImage" src={profileImage} alt="Mahipal Reddy" /> */}
+                        </Row>
+                        <div className="about-text-container text-center pt-5">
+                            <p>I'm comfortable throughout the stack, but my passion lies in the front end, at the intersection of application and user.
+                            <br/><br/>I also hold a degree in project management from the Valparaiso University.
+                            <br/><br/>I have 4+ years of development experience building products from scratch, developing and integrating with APIs, 
+                            working with a variety of frameworks and technologies and more recently developing applications with ReactJS. 
+                            I use my experience to be more than just a coder, connecting business requirements with modern technology.</p>
+                            <br/>
+                            <a role="button" className="pb-5" href={Resume} download=""><Button color='primary' outline>Download Resume</Button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

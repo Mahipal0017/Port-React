@@ -7,11 +7,10 @@ import UIInputputFiled from '../components/UI/UIInputField';
 import { getRequiredField } from './modules/ConstraintsHelper';
 import * as Utility from './modules/Utility';
 
-import * as actions from '../actions/index';
 
 class Login extends Component {
     state = {
-        isSignUp:false,
+        isSignIn:false,
         email:'',
         password:''
     }
@@ -67,52 +66,47 @@ class Login extends Component {
         }
     }
 
-    clickHereHandler = () => {
-        this.setState({
-            isSignUp: !this.state.isSignUp
+    handleSignInUp = () => {
+        this.setState( state => {
+           return {isSignIn: !state.isSignIn}
         })
     }
 
     render() {
-        let signInUp = 'Register';
-        let signInUpButton= 'Sign In';
+        let signInUp = 'Sign In';
+        let signInUpButton= 'Register';
         
-        if(this.state.isSignUp){
-            signInUp = 'SignIn';
-            signInUpButton= 'Register';
+        if(this.state.isSignIn){
+            signInUp = 'Register';
+            signInUpButton= 'Sign In';
         }
 
         return (
-            <div className="loginForm">
-                    <Button color='link' onClick={this.clickHereHandler}>Click here to {signInUp}</Button>
+                <div className="loginForm">
+                    <Button color='link' onClick={this.handleSignInUp}>Click here to {signInUp}</Button>
                     <UIInputputFiled 
                         label="Email:"
-                        name="Email"
+                        name="email"
                         placeholder="Enter your email here"
                         defaultValue={this.state.email}
                         onValidatedChange= {this.update}
                         onChangeOverride={true} 
-                        errorMessage={this.getErrorMessage("test", this.state.error)}
+                        errorMessage={this.getErrorMessage("email", this.state.error)}
                     />
                     <UIInputputFiled 
                         label="Password:"
-                        name="Password"
+                        name="password"
+                        type="password"
                         placeholder="Enter your password here"
                         defaultValue={this.state.password}
                         onValidatedChange= {this.update}
                         onChangeOverride={true} 
-                        errorMessage={this.getErrorMessage("test", this.state.error)}
+                        errorMessage={this.getErrorMessage("password", this.state.error)}
                     />
                     <Button color='success' outline onClick={this.handleSubmit}> {signInUpButton} </Button>
-            </div>
+                </div>
         );
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        submitForm: (email, password, isSignUp) => dispatch( actions.submitForm(email, password, isSignUp) ),
-    }
-}
-
-export default connect (null, mapDispatchToProps)(Login);
+export default connect ()(Login);

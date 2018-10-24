@@ -38,19 +38,34 @@ class UIInputField extends Component {
     render() {
         let error = null;
         if (this.props.errorMessage) {
-          error = ( <div role="alert" id={`${this.props.name}-error`}><span className="error">Error: {this.props.errorMessage}</span></div> );
+           error = ( <div role="alert" id={`${this.props.name}-error`}><span className="error">Error: {this.props.errorMessage}</span></div> );
+        }
+        let inputtag =(<div className="input-block">
+                        <input
+                          autocomplete="off"
+                          type="text"
+                          name="name"
+                          onChange={this.change}
+                          placeholder={this.props.label} />
+                        </div>)
+        
+        if(this.props.type==="textarea"){
+          inputtag= (<div className="input-block textareaType">
+                      <textarea
+                        autocomplete="off"
+                        rows="6"
+                        type="text"
+                        name="name"
+                        onChange={this.change}
+                        placeholder={this.props.label} />
+                      </div>)
         }
 
         return (
-            <fieldset className={(this.props.className?this.props.className:"") + (this.props.errorMessage||this.props.customErrorMessage ? "error":"")}>
-                 <div className="label">
-                    {this.props.label}   
-                </div>
-                <div className="input">
-                    <input onChange={this.change} placeholder={this.props.placeholder} />
-                </div>
+            <div className={(this.props.className?this.props.className:"ui-input") + (this.props.errorMessage||this.props.customErrorMessage ? " error":"")}>
+                {inputtag}
                 {error}
-            </fieldset>
+            </div>
         )
   }
 
@@ -59,7 +74,6 @@ class UIInputField extends Component {
     required:false,
     defaultValue:"",
     customErrorMessage:"",
-    layout:"LONG"
   };
 
   static propTypes = {

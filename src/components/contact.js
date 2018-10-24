@@ -6,14 +6,19 @@ import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 import UIInputputFiled from '../components/UI/UIInputField';
 
-import { getRequiredField } from './modules/ConstraintsHelper';
+import { getRequiredField, getPhoneNumberField } from './modules/ConstraintsHelper';
 import * as Utility from './modules/Utility';
 
 class Contact extends Component{
     constructor(props){
         super(props);
         this.state={
-            test:'',
+            isActivatedButton: false,
+            name:"",
+            email:"",
+            company:"",
+            phone:"",
+            message:"",
         }
     }
 
@@ -40,7 +45,11 @@ class Contact extends Component{
         let validatedReturn = null;
     
         try {
-            constraints["test"] = getRequiredField();
+            constraints["name"] = getRequiredField();
+            constraints["email"] = getRequiredField();
+            // constraints["company"] = getRequiredField();
+            // constraints["phone"] = getPhoneNumberField();
+            // constraints["message"] = getRequiredField();
             validatedReturn = Utility.confirmConstraints(ste, constraints);
         } catch(e) {
           console.log(e);
@@ -53,6 +62,11 @@ class Contact extends Component{
         let v = {};
         v[key] = value;
         this.setState(Object.assign(this.state, v));
+            if((this.state.email == "" )||(this.state.name == "")) {
+                this.setState({isActivatedButton: false});
+            } else {
+                this.setState({isActivatedButton: true});
+            }
     }
 
     handleSubmit = (event) => {
@@ -79,55 +93,118 @@ class Contact extends Component{
                             <h5 className="main-subheading">Have a question or want to work together?</h5>
                         </Col>
                     </Row>
-                    <Row className="col-md-9 mt-5 be-center">
-                        <Col md='4'>
-                            <div className='contact-item1'>
-                                <i className="fas fa-map-marker-alt fa-2x"></i>
-                                <p>Jacksonville, Florida</p>
-                            </div>
+                    <Row className="col-md-12 be-center contact-items-container">
+                        <Col md='4' className='contact-item'>
+                            <span className="fa-stack fa-2x">
+                            <i className="fas fa-circle fa-stack-2x core-2"></i>
+                            <i className="fas fa-map-marker-alt fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <p>Jacksonville, Florida</p>
                         </Col>
-                        <Col md='4'>
-                            <div className='contact-item1'>
-                                <i className="far fa-envelope fa-2x"></i>
-                                <p>mahipalr369@gmail.com</p>
-                            </div>
+                        <Col md='4' className='contact-item'>
+                            <span className="fa-stack fa-2x">
+                            <i className="fas fa-circle fa-stack-2x core-2"></i>
+                            <i className="far fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <p>mahipalr369@gmail.com</p>
                         </Col>
-                        <Col md='4'>
-                            <div className='contact-item1'>
-                                <i className="fas fa-phone fa-2x"></i>
-                                <p>+1 712 328 5679</p>
-                            </div>
+                        <Col md='4' className='contact-item'>
+                            <span className="fa-stack fa-2x">
+                            <i className="fas fa-circle fa-stack-2x core-2"></i>
+                            <i className="fas fa-phone fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <p>+1 712 328 5679</p>
                         </Col>      
                     </Row>
-                    <div className="col-md-6 mt-5 be-center">
-                        <h4 className='pb-2'>Have a question or want to work together? </h4>
+                    <Row className="col-md-12 be-center contact-form-container">
+                        <Col xs="12"><h4 className='pb-2'>I'm available for work, get in touch </h4></Col>
+                        <Col xs='12' md="6">
                             <UIInputputFiled 
-                                label="TEST"
-                                name="test"
-                                placeholder="test"
-                                defaultValue={this.state['test']}
+                                label="Name*"
+                                name="name"
+                                placeholder="Name"
+                                defaultValue={this.state['name']}
                                 onValidatedChange= {this.update}
                                 onChangeOverride={true} 
-                                layout="FLAT"
-                                errorMessage={this.getErrorMessage("test", this.state.error)}
+                                errorMessage={this.getErrorMessage("name", this.state.error)}
+                            />
+                            </Col>
+                        <Col xs='12' md="6">
+                            <UIInputputFiled 
+                                label="Company"
+                                name="company"
+                                placeholder="Company"
+                                defaultValue={this.state['company']}
+                                onValidatedChange= {this.update}
+                                onChangeOverride={true} 
+                                errorMessage={this.getErrorMessage("company", this.state.error)}
                                 />
-                            <button type="submit" className="submit-btn" onClick={this.handleSubmit}>Send Message</button>
-                        <div className="social pt-5 pb-2">
-                          <ul className="pl-0">
-                            <li><a href="https://www.linkedin.com/in/mahipalr369" target='blank'><i className="fab fa-2x fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i className="fab fa-2x fa-twitter"></i></a></li>
-                            <li><a href="#"><i className="fab fa-2x fa-dribbble"></i></a></li>
-                            <li><a href="#"><i className="fab fa-2x fa-github"></i></a></li>
-                            <li><a href="#"><i className="fab fa-2x fa-facebook"></i></a></li>
-                            <li><a href="#"><i className="fab fa-2x fa-instagram"></i></a></li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-                <div id="">
-                    <div className="text-center">
-                      <p>Copyright &copy; 2015 MahipalReddy </p>
-                    </div>
+                        </Col>
+                        <Col xs='12' md="6">
+                            <UIInputputFiled 
+                                label="E-mail*"
+                                name="email"
+                                placeholder="E-mail"
+                                defaultValue={this.state['email']}
+                                onValidatedChange= {this.update}
+                                onChangeOverride={true} 
+                                errorMessage={this.getErrorMessage("email", this.state.error)}
+                                />
+                        </Col>
+                        <Col xs='12' md="6">    
+                            <UIInputputFiled 
+                                label="Phone Number"
+                                name="phone"
+                                placeholder="Phone Number"
+                                defaultValue={this.state['phone']}
+                                onValidatedChange= {this.update}
+                                onChangeOverride={true} 
+                                errorMessage={this.getErrorMessage("phone", this.state.error)}
+                                />
+                        </Col>
+                        <Col xs='12'>
+                            <UIInputputFiled 
+                                label="Message"
+                                name="message"
+                                type="textarea"
+                                placeholder="Message"
+                                defaultValue={this.state['message']}
+                                onValidatedChange= {this.update}
+                                onChangeOverride={true} 
+                                errorMessage={this.getErrorMessage("message", this.state.error)}
+                                />
+                        </Col>
+                        <Col className="text-right">
+                            <button 
+                                type="submit" 
+                                className={`core-btn ${this.state.isActivatedButton ? ' activatedButton' : " disabled"}`}
+                                onClick={this.handleSubmit}>
+                                Send Your Message
+                            </button>
+                        </Col> 
+                    </Row>
+                    <Row className="social-items-container be-center">
+                        {/* <Col xs='12' className='text-left pl-2'><h4>Let's get social</h4></Col> */}
+                        <Col>
+                            <a href="https://www.linkedin.com/in/mahipalr369" target='blank'>
+                                <button className="core-btn linkedInButton mr-2 mb-3">
+                                <i class="fab fa-linkedin-in pr-2"></i>LINKEDIN</button>
+                            </a>
+                                
+                            <button className="core-btn fbButton mr-2 mb-3">
+                            <i className="fab fa-facebook-f pr-2"></i>FACEBOOK</button>
+                            
+                            
+                            <button className="core-btn githubButton mr-2 mb-3">
+                            <i class="fab fa-github pr-2"></i>GITHUB</button>
+
+                            <button className="core-btn twitterButton mr-2 mb-3">
+                            <i class="fab fa-twitter pr-2"></i>TWITTER</button>
+                            
+                            <button className="core-btn instaButton mr-2 mb-3">
+                            <i class="fab fa-instagram pr-2"></i>INSTAGRAM</button>
+                        </Col>
+                    </Row>
                 </div>
             </div>
         );
