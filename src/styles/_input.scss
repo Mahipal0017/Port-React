@@ -1,10 +1,13 @@
 .ui-input{
     .input-block {
         position: relative;
-        margin-bottom: 15px;
+        margin-top: 10px;
         cursor: text;
         min-height: 50px;
         padding: 0;
+        &:focus{
+            border-color:#009688;
+        }
     }
 
     .input-block input, .input-block textarea {
@@ -26,6 +29,9 @@
         -o-transition: background .2s ease-out,border .2s ease-out,color .2s ease-out;
         -webkit-transition: background .2s ease-out,border .2s ease-out,color .2s ease-out;
         transition: background .2s ease-out,border .2s ease-out,color .2s ease-out;
+        &:focus{
+            border-color:#009688;
+        }
     }
     input, textarea {
         -webkit-appearance: none!important;

@@ -10,21 +10,14 @@ class UIInputField extends Component {
         }   
     }
 
-    // static getDerivedStateFromProps(props, currentState) {
-    //     if (props.defaultValue !== currentState.value) {
-    //         const value = !!props.defaultValue ? "" : props.defaultValue;        
-    //         this.setState(Object.assign(this.state,{value:value}));
-    //     } else{
-    //         console.log("sorry")
-    //     }
-    // }
-
-    componentWillReceiveProps(nextProps){if (nextProps.defaultValue !== this.state.inital) {
-        var inital = nextProps.defaultValue === (null || undefined) ? "" : nextProps.defaultValue;
-        this.setState(Object.assign(this.state,{value:inital, inital:inital}));
-      } else {
-        //console.log(`------------  NO NEW PROPS? UIRadioSelection (${this.props.name}) WILL RECIEVE NEW PROPS - INITAL (${this.state.inital}) DEFAULT (${nextProps.defaultValue})`);
-      }
+    static getDerivedStateFromProps(newProps, currentState) {
+        if (newProps.defaultValue !== currentState.value) {
+            const updatedValue = !!newProps.defaultValue ? "" : newProps.defaultValue;        
+            return {
+              value: updatedValue
+            }
+        }
+        return null;
     }
     
     change = (event) => {
@@ -42,17 +35,17 @@ class UIInputField extends Component {
         }
         let inputtag =(<div className="input-block">
                         <input
-                          autocomplete="off"
-                          type="text"
+                          // autocomplete="off"
+                          type={this.props.type}
                           name="name"
                           onChange={this.change}
                           placeholder={this.props.label} />
                         </div>)
         
-        if(this.props.type==="textarea"){
+        if(this.props.inputType==="textarea"){
           inputtag= (<div className="input-block textareaType">
                       <textarea
-                        autocomplete="off"
+                        // autocomplete="off"
                         rows="6"
                         type="text"
                         name="name"
@@ -84,7 +77,7 @@ class UIInputField extends Component {
     legendClasses: PropTypes.string,
     defaultValue: PropTypes.string.isRequired,
     onValidatedChange: PropTypes.func.isRequired,
-    layout: PropTypes.string.isRequired,
+    layout: PropTypes.string,
     errorMessage:PropTypes.string,
   };
 }

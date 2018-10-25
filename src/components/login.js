@@ -6,6 +6,7 @@ import UIInputputFiled from '../components/UI/UIInputField';
 
 import { getRequiredField } from './modules/ConstraintsHelper';
 import * as Utility from './modules/Utility';
+import * as Actions from '../actions/login';
 
 
 class Login extends Component {
@@ -63,27 +64,33 @@ class Login extends Component {
         } else {
           delete this.state.error;
           console.log("Passed Validation", this.state)
+          this.state.isSignIn
+            ?
+            this.props.dispatch(Actions.requestSignIn(this.state))
+            :
+            this.props.dispatch(Actions.requestSignUp(this.state));
         }
     }
 
     handleSignInUp = () => {
         this.setState( state => {
            return {isSignIn: !state.isSignIn}
-        })
+        });
+        delete this.state.error;
     }
 
     render() {
-        let signInUp = 'Sign In';
+        let signInUpLink = 'Sign In';
         let signInUpButton= 'Register';
         
         if(this.state.isSignIn){
-            signInUp = 'Register';
+            signInUpLink = 'Register';
             signInUpButton= 'Sign In';
         }
 
         return (
-                <div className="loginForm">
-                    <Button color='link' onClick={this.handleSignInUp}>Click here to {signInUp}</Button>
+                <div className="login-container">
+                    <div className="be-right-div"><Button color='link' className="mb-2" onClick={this.handleSignInUp}>Click here to {signInUpLink}</Button></div>
                     <UIInputputFiled 
                         label="Email"
                         name="email"
@@ -101,7 +108,7 @@ class Login extends Component {
                         onChangeOverride={true} 
                         errorMessage={this.getErrorMessage("password", this.state.error)}
                     />
-                    <Button color='success' outline onClick={this.handleSubmit}> {signInUpButton} </Button>
+                    <div className="be-right-div"><button className="core-btn activatedButton mt-3" onClick={this.handleSubmit}> {signInUpButton} </button></div>
                 </div>
         );
     }

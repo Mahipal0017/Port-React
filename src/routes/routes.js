@@ -9,20 +9,20 @@ import About from '../components/about';
 import Work from '../components/work';
 import Contact from '../components/contact';
 import Initial from '../components/initial';
-
+// import Transition from "../components/transition";
 
 const routes = () => {
     return (
     <BrowserRouter>
         <Switch>
             <Route exact path='/' component={Login} />
-            <Route path="/home" component={Home} />
-            <Route path="/whatido" component={WhatIDo} />
-            <Route path="/about" component={About} />
-            <Route path="/initial" component={Initial} />
-            <Route path="/skills" component={Skills} />
-            <Route path="/work" component={Work} />
-            <Route path="/contact" component={Contact} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/whatido" component={WhatIDo} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/initial" component={Initial} />
+            <Route exact path="/skills" component={Skills} />
+            <Route exact path="/work" component={Work} />
+            <Route exact path="/contact" component={Contact} />
             <Route render={ () => <h1>404 Error</h1> } />
         </Switch>
     </BrowserRouter>

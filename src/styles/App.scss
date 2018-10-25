@@ -13,10 +13,10 @@
 @import 'skills';
 @import 'contact';
 
-@import 'loginForm';
 @import 'initial';
-
-
+/*
+@import "transition";
+*/
 
 
 body {
@@ -60,7 +60,11 @@ body {
 .be-center {
   margin-right: auto;
   margin-left: auto;
-} 
+}
+
+.be-right-div {
+  text-align: end;
+}
 
 .text-center {
   text-align: center;

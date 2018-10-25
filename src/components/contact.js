@@ -166,7 +166,7 @@ class Contact extends Component{
                             <UIInputputFiled 
                                 label="Message"
                                 name="message"
-                                type="textarea"
+                                inputType="textarea"
                                 placeholder="Message"
                                 defaultValue={this.state['message']}
                                 onValidatedChange= {this.update}
@@ -177,7 +177,7 @@ class Contact extends Component{
                         <Col className="text-right">
                             <button 
                                 type="submit" 
-                                className={`core-btn ${this.state.isActivatedButton ? ' activatedButton' : " disabled"}`}
+                                className={`mt-3 core-btn ${this.state.isActivatedButton ? ' activatedButton' : " disabled"}`}
                                 onClick={this.handleSubmit}>
                                 Send Your Message
                             </button>
