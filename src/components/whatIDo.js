@@ -12,13 +12,13 @@ class whatIDo extends Component {
                 <PageControls goto="/about" spanN="about" classN="next-page-arrow" />
                 <Navigation />
                 <div className="main-container">
-                    <Row>
+                    <Row className="animated fadeInLeft">
                         <Col className="text-center">
                             <h2 className="main-heading">What I do</h2>
                             <h5 className="main-subheading">Things I'm skilled at and passionate about.</h5>
                         </Col>
                     </Row>
-                    <Row className="text-center">
+                    <Row className="text-center animated fadeInRight">
                         <Col lg="6" className="do-item">
                             <span className="fa-stack fa-4x">
                                 <i className="fas fa-circle fa-stack-2x core-1"></i>

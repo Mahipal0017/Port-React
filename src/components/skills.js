@@ -27,14 +27,17 @@ const skills = () => {
             <Navigation />
             <div className="main-container">
                 <Row>
-                    <Col className="text-center">
+                    <Col className="text-center animated fadeInLeft">
                         <h2 className="main-heading">Core Skills</h2>
                         <h5 className="main-subheading">Some of my technology stack</h5>
                     </Col>
                 </Row>
-                <div className="progress-bars-container">
+                <div className="progress-bars-container animated fadeInRight">
                     {skillsList.map(item => <SkillItem skillName={item.s} skillValue={item.v}/>)}
                 </div>
+                <Row>
+                    <Col><h1><i class="fab fa-gitlab"></i></h1><p>GitLab</p></Col>
+                </Row>
             </div> 
     </div>   
     )

@@ -1,0 +1,122 @@
+.animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ }
+
+ .animated10{
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ }
+
+ .fadeIn{
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ }
+
+ .fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    } 
+
+ .fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+.growLeft {
+    -webkit-animation-name: growLeft;
+    animation-name: growLeft;
+}
+
+ @-webkit-keyframes fadeIn {
+    0% {
+       opacity: 0;
+       -webkit-transform: translateX(0px);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translateX(0);
+    }
+ }
+ 
+ @keyframes fadeIn {
+    0% {
+       opacity: 0;
+       transform: translateX(0px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
+ 
+ @-webkit-keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       -webkit-transform: translateX(-100px);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translateX(0);
+    }
+ }
+ 
+ @keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-100px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
+ 
+ @-webkit-keyframes fadeInRight {
+    0% {
+       opacity: 0;
+       -webkit-transform: translateX(100px);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translateX(0);
+    }
+ }
+ 
+ @keyframes fadeInRight {
+    0% {
+       opacity: 0;
+       transform: translateX(100px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
+ 
+ @-webkit-keyframes growLeft {
+    0% {
+       opacity: 0;
+       -webkit-transform: scaleX(0);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: scaleX(1);
+    }
+ }
+
+ @keyframes growLeft {
+    from {
+        opacity:0;
+        transform: scaleX(0);
+    }
+    to {
+        opacity:1;
+        transform: scaleX(1);
+    }
+  }
+
+ 

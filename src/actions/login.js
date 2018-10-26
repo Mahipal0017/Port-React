@@ -1,5 +1,4 @@
 import axios from 'axios';
-import firebase from '../fbconfig';
 
 export const INIT_SIGNUP_REQUEST = 'INIT_SIGNUP_REQUEST';
 export const SIGNUP_REQUEST_COMPLETE = "SIGNUP_REQUEST_COMPLETE";

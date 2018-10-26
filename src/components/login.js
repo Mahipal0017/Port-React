@@ -108,7 +108,7 @@ class Login extends Component {
                         onChangeOverride={true} 
                         errorMessage={this.getErrorMessage("password", this.state.error)}
                     />
-                    <div className="be-right-div"><button className="core-btn activatedButton mt-3" onClick={this.handleSubmit}> {signInUpButton} </button></div>
+                    <div className="be-right-div"><button className="core-btn activatedButton mt-3  w-25" onClick={this.handleSubmit}> {signInUpButton} </button></div>
                 </div>
         );
     }
