@@ -87,13 +87,13 @@ class Contact extends Component{
                 <PageControls goto="/work" spanN="my work" classN="prev-page-arrow" />
                 <Navigation />
                 <div className="main-container">
-                    <Row>
+                    <Row className="">
                         <Col className="text-center">
                             <h2 className="main-heading">Say Hello</h2>
                             <h5 className="main-subheading">Have a question or want to work together?</h5>
                         </Col>
                     </Row>
-                    <Row className="col-md-12 be-center contact-items-container">
+                    <Row className="col-md-12 be-center contact-items-container animated fadeInRight">
                         <Col md='4' className='contact-item'>
                             <span className="fa-stack fa-2x">
                             <i className="fas fa-circle fa-stack-2x core-2"></i>
@@ -116,7 +116,7 @@ class Contact extends Component{
                             <p>+1 712 328 5679</p>
                         </Col>      
                     </Row>
-                    <Row className="col-md-12 be-center contact-form-container">
+                    <Row className="col-md-12 be-center contact-form-container animated fadeInLeft">
                         <Col xs="12"><h4 className='pb-2'>I'm available for work, get in touch </h4></Col>
                         <Col xs='12' md="6">
                             <UIInputputFiled 
@@ -183,7 +183,7 @@ class Contact extends Component{
                             </button>
                         </Col> 
                     </Row>
-                    <Row className="social-items-container be-center">
+                    <Row className="social-items-container be-center animated fadeInRight">
                         {/* <Col xs='12' className='text-left pl-2'><h4>Let's get social</h4></Col> */}
                         <Col>
                             <a href="https://www.linkedin.com/in/mahipalr369" target='blank'>

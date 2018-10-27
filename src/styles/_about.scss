@@ -5,6 +5,11 @@
         margin: 15px;
     }
 }
+
+.about-text-container{
+    text-align: justify;
+}
+
 .about-img-container{
         position: relative;
         display: inline-block;
@@ -78,22 +83,3 @@
 .back {
 	transform: rotateY(180deg);
 }
-
-// .fa, .fas {
-//     font-family: "Font Awesome 5 Pro";
-//     font-weight: 900;
-// }
-
-// .fa, .fab, .fal, .far, .fas {
-//     -moz-osx-font-smoothing: grayscale;
-//     -webkit-font-smoothing: antialiased;
-//     display: inline-block;
-//     font-style: normal;
-//     font-variant: normal;
-//     text-rendering: auto;
-//     line-height: 1;
-// }
-
-// .fa-tachometer-fast:before {
-//     content: "\f62a";
-// }

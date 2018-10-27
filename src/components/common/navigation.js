@@ -121,12 +121,12 @@ class Navigation extends Component{
                     <i></i>
                 </div> )
 
-        const homeLink = <MediaQuery minDeviceWidth={568}>
+        const homeLink = <MediaQuery minDeviceWidth={700}>
         { matches => {
             if(matches) {
                 return "Mahipal Reddy";
             } else {
-                return <i className="fas fa-4x fa-user-tie core-1"></i>;
+                return <i className="fas fa-user-tie core-2"></i>;
             }
         } }
         </MediaQuery>
@@ -148,7 +148,7 @@ class Navigation extends Component{
                 <div className="nav-container">
                     <div className="nav-name-link" hidden={this.props.dontShowHomeIcon ? true : false}>
                         <Link className="name" to='/home'>
-                            {true ? <i className="fas fa-user-tie core-1"></i> : "Mahipal Reddy"}
+                            {homeLink}
                         </Link>
                     </div>                    
                 </div>

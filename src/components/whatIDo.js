@@ -12,14 +12,14 @@ class whatIDo extends Component {
                 <PageControls goto="/about" spanN="about" classN="next-page-arrow" />
                 <Navigation />
                 <div className="main-container">
-                    <Row className="animated fadeInLeft">
+                    <Row className="animated fadeInDown">
                         <Col className="text-center">
                             <h2 className="main-heading">What I do</h2>
                             <h5 className="main-subheading">Things I'm skilled at and passionate about.</h5>
                         </Col>
                     </Row>
-                    <Row className="text-center animated fadeInRight">
-                        <Col lg="6" className="do-item">
+                    <Row className="text-center">
+                        <Col lg="6" className="do-item animated fadeInLeft">
                             <span className="fa-stack fa-4x">
                                 <i className="fas fa-circle fa-stack-2x core-1"></i>
                                 <i className="fas fa-code fa-stack-1x fa-inverse"></i>
@@ -31,7 +31,7 @@ class whatIDo extends Component {
                             </h4>
                             <p className="text-muted">Fast, responsive and engaging apps that bring your ideas to life.</p>
                         </Col>
-                        <Col lg="6" className="do-item">
+                        <Col lg="6" className="do-item animated fadeInRight">
                             <span className="fa-stack fa-4x">
                                 <i className="fas fa-circle fa-stack-2x core-1"></i>
                                 <i className="fas fa-broadcast-tower fa-stack-1x fa-inverse"></i>
@@ -47,7 +47,7 @@ class whatIDo extends Component {
                             REST API development with Node.js.
                             </p>
                         </Col>
-                        <Col lg="6" className="do-item">
+                        <Col lg="6" className="do-item animated fadeInLeft">
                             <span className="fa-stack fa-4x">
                                 <i className="fas fa-circle fa-stack-2x core-1"></i>
                                 <i className="fas fa-dollar-sign fa-stack-1x fa-inverse"></i>
@@ -59,7 +59,7 @@ class whatIDo extends Component {
                             </h4>
                             <p className="text-muted">Integration with the most popular Payment Gateways such as Stripe.</p>
                         </Col>
-                        <Col lg="6" className="do-item">
+                        <Col lg="6" className="do-item animated fadeInRight">
                             <span className="fa-stack fa-4x">
                                 <i className="fas fa-circle fa-stack-2x core-1"></i>
                                 <i className="fab fa-accessible-icon fa-stack-1x fa-inverse"></i>

@@ -7,7 +7,7 @@ const PageControls = (props) => {
     //text that to be displayed when hovered
     const { goto, classN, spanN } = props;
     return (
-        <div className="page-control">
+        <div className="page-control animated10 fadeIn">
             <Link to={goto} className={classN}>
                 <span>{spanN}</span>
                 <em></em>

@@ -20,7 +20,7 @@ const work = () => {
                             <h5 className="main-subheading"></h5>
                         </Col>
                     </Row>
-                    <Row style={{width: '50%'}} className="be-center">
+                    <Row className="be-center w-75">
                         <WorkItem />
                     </Row>
                     <Row>

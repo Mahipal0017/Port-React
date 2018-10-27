@@ -39,7 +39,7 @@ const items = [
 const workItem = () => {
     return (
         <div>
-            <UncontrolledCarousel items={items} />
+            <UncontrolledCarousel items={items} indicators={false} />
         </div>
     );
 };

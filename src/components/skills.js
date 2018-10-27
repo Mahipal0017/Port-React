@@ -7,6 +7,15 @@ import PageControls from "./common/pageControls";
 
 import SkillItem from './skillItem';
 
+import firebaseImg from '../extras/img/tools-items/firebase.png';
+import gitImg from '../extras/img/tools-items/git.png';
+import gitlabImg from '../extras/img/tools-items/gitlab.png';
+import nodeImg from '../extras/img/tools-items/node.png';
+import postmanImg from '../extras/img/tools-items/postman.png';
+import stripeImg from '../extras/img/tools-items/stripe.png';
+import vscodeImg from '../extras/img/tools-items/vscode.png';
+import webpackImg from '../extras/img/tools-items/webpack.png';
+
 const skillsList = [{s:"JavaScript",v:"80"},
 {s:"ReactJS",v:"80"},
 {s:"Redux",v:"90"},
@@ -35,8 +44,12 @@ const skills = () => {
                 <div className="progress-bars-container animated fadeInRight">
                     {skillsList.map(item => <SkillItem skillName={item.s} skillValue={item.v}/>)}
                 </div>
-                <Row>
-                    <Col><h1><i class="fab fa-gitlab"></i></h1><p>GitLab</p></Col>
+                <Row className="pb-5 pt-5">
+                    <Col md="6" sm="12">
+                    <img src={gitImg} className="skillTool"/>
+                    </Col>
+                    <Col md="6" sm="12">
+                    </Col>
                 </Row>
             </div> 
     </div>   
