@@ -9,6 +9,7 @@ import About from '../components/about';
 import Work from '../components/work';
 import Contact from '../components/contact';
 import Initial from '../components/initial';
+import Error from '../components/error';
 // import Transition from "../components/transition";
 
 const routes = () => {
@@ -23,7 +24,7 @@ const routes = () => {
             <Route exact path="/skills" component={Skills} />
             <Route exact path="/work" component={Work} />
             <Route exact path="/contact" component={Contact} />
-            <Route render={ () => <h1>404 Error</h1> } />
+            <Route render={ () => <Error/> } />
         </Switch>
     </BrowserRouter>
     );

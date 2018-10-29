@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import '../styles/App.scss';
 import 'react-circular-progressbar/dist/styles.css';
 import Navigation from './common/navigation';
 import backgroundImg from '../extras/img/bodybackground.jpg';
