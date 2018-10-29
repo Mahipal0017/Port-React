@@ -15,11 +15,11 @@ const routes = () => {
     return (
     <BrowserRouter>
         <Switch>
-            <Route exact path='/' component={Login} />
-            <Route exact path="/home" component={Home} />
+            {/* <Route exact path='/' component={Login} /> */}
+            <Route exact path="/" component={Home} />
             <Route exact path="/whatido" component={WhatIDo} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/initial" component={Initial} />
+            {/* <Route exact path="/initial" component={Initial} /> */}
             <Route exact path="/skills" component={Skills} />
             <Route exact path="/work" component={Work} />
             <Route exact path="/contact" component={Contact} />

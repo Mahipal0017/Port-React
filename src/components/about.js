@@ -28,28 +28,29 @@ class About extends Component {
                         <Col lg="4" className="pb-5 animated fadeInLeft">
                             <Row className="about-img-container" >
                             <Col>
-                                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	                                <div class="flipper">
-	                            	    <div class="front"><img className="cartoonImage" src={bitmojiImage} alt="Mahipal Reddy" /></div>
-	                            	    <div class="back"><img className="profileImage" src={profileImage} alt="Mahipal Reddy" /></div>
+                                <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                                <div className="flipper">
+	                            	    <div className="front"><img className="cartoonImage" src={bitmojiImage} alt="Mahipal Reddy" /></div>
+	                            	    <div className="back"><img className="profileImage" src={profileImage} alt="Mahipal Reddy" /></div>
 	                                </div>
                                 </div>
                             </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h6 className="pt-3">Fast | Efficient | Responsive | Updated</h6>
+                                    <h6 className="mt-3">Fast | Efficient | Responsive | Updated</h6>
                                 </Col>
                             </Row>
                         </Col>
                         <Col lg="8" className="pb-5">
                             <div className="about-text-container animated fadeInRight">
                                 <p>I'm comfortable throughout the stack, but my passion lies in the front end, at the intersection of application and user.
-                                <br/><br/>I have 4+ years of development experience building products from scratch, developing and integrating with APIs, 
-                                working with a variety of frameworks and technologies and more recently developing applications with ReactJS. 
+                                <br/><br/>I have 4+ years of development experience in developing, maintaining web applications and also in building the products from scratch.
+                                I have experience in developing and integrating with APIs, consuming the data from the service and presenting on the UI.
+                                I worked with a variety of frameworks and ReactJS is my most recent javascript framework. I developed the payment gateway by integrating with stripe vendor for Florida Blue client.
                                 I use my experience to be more than just a coder, connecting business requirements with modern technology.
                                 I also hold a degree in project management from the Valparaiso University.</p>
-                                <p>I am a good listner. I read the articles related to space, matter and universe.
+                                <p>I am a good listner. I love to read the articles related to space, matter and universe.
                                 I am much intrested in travelling, exploring new places and socializing with new people.</p>
                                 <br/>
                             </div>

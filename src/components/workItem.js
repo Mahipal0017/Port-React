@@ -33,7 +33,7 @@ const items = [
   {
     src: img6,
     altText: 'CTRL+R Technologies',
-  }
+  },
 ];
 
 const workItem = () => {

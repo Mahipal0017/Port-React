@@ -6,11 +6,12 @@ import Navigation from './common/navigation';
 import PageControls from "./common/pageControls";
 
 import SkillItem from './skillItem';
+import SkillToolItem from './skillToolItem';
 
 import firebaseImg from '../extras/img/tools-items/firebase.png';
 import gitImg from '../extras/img/tools-items/git.png';
 import gitlabImg from '../extras/img/tools-items/gitlab.png';
-import nodeImg from '../extras/img/tools-items/node.png';
+import babelImg from '../extras/img/tools-items/babel.png';
 import postmanImg from '../extras/img/tools-items/postman.png';
 import stripeImg from '../extras/img/tools-items/stripe.png';
 import vscodeImg from '../extras/img/tools-items/vscode.png';
@@ -28,6 +29,15 @@ const skillsList = [{s:"JavaScript",v:"80"},
 {s:"HTML5",v:"90"},
 {s:"AngularJS",v:"80"}]
 
+const toolsList = [{s:vscodeImg, t:"VS Code" },
+{s:gitImg, t:"Git" },
+{s:gitlabImg, t:"GitLab" },
+{s:postmanImg , t:"Postman" },
+{s:webpackImg , t:"Webpack" },
+{s:babelImg , t:"Babel" },
+{s:stripeImg, t:"Stripe" },
+{s:firebaseImg, t:"Firebase" }]
+
 const skills = () => {
     return (
         <div className="page-content">
@@ -36,23 +46,31 @@ const skills = () => {
             <Navigation />
             <div className="main-container">
                 <Row>
-                    <Col className="text-center animated fadeInLeft">
+                    <Col className="text-center animated fadeInDown">
                         <h2 className="main-heading">Core Skills</h2>
                         <h5 className="main-subheading">Some of my technology stack</h5>
                     </Col>
                 </Row>
-                <div className="progress-bars-container animated fadeInRight">
-                    {skillsList.map(item => <SkillItem skillName={item.s} skillValue={item.v}/>)}
-                </div>
-                <Row className="pb-5 pt-5">
-                    <Col md="6" sm="12">
-                    <img src={gitImg} className="skillTool"/>
+                <Row>
+                    <Col className="progress-bars-container animated fadeInRight">
+                        {skillsList.map(item => <SkillItem skillName={item.s} skillValue={item.v}/>)}
+                    </Col>
+                </Row>
+                <Row className="tools mb-5 mt-5 ml-2 mr-2 animated fadeInLeft">
+                    <Col sm='12' className="pt-3 pb-3">
+                        <h4><strong>TOOLS I USE</strong></h4>
+                    </Col>
+                    <Col sm="12">
+                        <Row>
+                            {toolsList.map(item=><SkillToolItem srcName={item.s} toolName={item.t}/>)}
+                        </Row>
                     </Col>
                     <Col md="6" sm="12">
+
                     </Col>
                 </Row>
             </div> 
-    </div>   
+        </div>   
     )
 }
 

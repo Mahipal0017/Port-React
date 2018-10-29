@@ -11,9 +11,12 @@ class Home extends Component {
     return (
       <div >
         <Navigation />
+        <div className="ribbon animated rubberBand">
+          <Link to="/contact" className="">MAHIPAL REDDY</Link>
+        </div>
         <div className="main-container">
           <div className="intro-text-container">
-            <h1 className="intro-heading">
+            <h1 className="intro-heading animated fadeInDownMultiple">  
             Full Stack
             <br />
             <b>React JS </b> 
@@ -22,7 +25,7 @@ class Home extends Component {
             <br/>
             developer
             </h1>
-            <Link to="/whatido" class="btn home-btn">WHAT I DO</Link>
+            <Link to="/whatido" className="btn home-btn animatedafter1 hinge">WHAT I DO</Link>
           </div>
         </div>
         

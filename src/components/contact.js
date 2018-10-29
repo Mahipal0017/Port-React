@@ -87,9 +87,9 @@ class Contact extends Component{
                 <PageControls goto="/work" spanN="my work" classN="prev-page-arrow" />
                 <Navigation />
                 <div className="main-container">
-                    <Row className="">
+                    <Row className="animated fadeInDown">
                         <Col className="text-center">
-                            <h2 className="main-heading">Say Hello</h2>
+                            <h2 className="main-heading ">Say Hello</h2>
                             <h5 className="main-subheading">Have a question or want to work together?</h5>
                         </Col>
                     </Row>

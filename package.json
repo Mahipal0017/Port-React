@@ -52,6 +52,7 @@
     "react-responsive": "^5.0.0",
     "react-router-dom": "^4.3.1",
     "react-sweet-progress": "^1.1.2",
+    "react-vertical-timeline-component": "^2.3.1",
     "reactstrap": "^6.4.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
