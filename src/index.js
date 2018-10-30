@@ -5,20 +5,18 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import Routes from './routes/routes';
 import './index.scss';
-import fire from './config/fire';
+import * as firebase from 'firebase';
 
-const authListner = () => {
-    fire.auth().onAuthStateChanged(user=> {
-        if(user){
-            this.setState({
-                user: user
-            })
-        } else {
-            this.setState({ user: null});
-        }
+var config = {
+    apiKey: "AIzaSyArdj452mX1ZMBsl9FsaSqr9_HAY05SWds",
+    authDomain: "findthemahi.firebaseapp.com",
+    databaseURL: "https://findthemahi.firebaseio.com",
+    projectId: "findthemahi",
+    storageBucket: "findthemahi.appspot.com",
+    messagingSenderId: "1058606501232"
+  };
 
-    })
-}
+firebase.initializeApp(config);
 
 const app = (
     <Provider store={store}>
