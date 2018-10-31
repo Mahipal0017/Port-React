@@ -28,9 +28,13 @@ button.core-btn {
     &:hover {
         background-color: #8e8e8e;
         transition: all .4s ease-out;
-    }
-    
+    }    
 }
+
+.core-btn.disabled{
+    pointer-events: none;
+}
+
 .activatedButton{
     color:#ebf1f8;
     background-color:#009688;

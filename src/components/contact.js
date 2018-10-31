@@ -91,7 +91,9 @@ class Contact extends Component{
         let sendButton = (<button 
                             type="submit" 
                             className={`mt-3 core-btn ${this.state.isActivatedButton ? ' activatedButton' : " disabled"}`}
-                            onClick={this.handleSubmit}>
+                            onClick={this.handleSubmit}
+                            disabled={!this.state.isActivatedButton}
+                            >
                             Send Your Message
                             </button>);
         if(this.props.contactReducer.fetching){
