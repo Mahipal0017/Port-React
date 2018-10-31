@@ -38,7 +38,7 @@ class Home extends Component {
           </div>
           
           <div className="right-arrow">
-            <a><Link to='/about'><i class="fas fa-angle-right fa-2x"></i></Link></a>
+            <a><Link to='/about'><i className="fas fa-angle-right fa-2x"></i></Link></a>
           </div>
           <div className="app-footer"></div> */}
           

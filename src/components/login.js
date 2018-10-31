@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 
 import UIInputputFiled from '../components/UI/UIInputField';

@@ -9,7 +9,7 @@ button.core-btn {
     font-size: 12px;
     box-sizing: border-box;
     vertical-align: middle;
-    height: 42px;
+    min-height: 42px;
     cursor: pointer;
     line-height: 20px;
     font-weight: 900;
@@ -20,7 +20,7 @@ button.core-btn {
     border:none;
     border-radius: 3px;
     box-shadow:0px 3px 0 0px #555, 0px 7px 0px 0px #111;
-    transition: all .3s ease-out;
+    transition: all .5s ease-out;
     overflow: none;
     &:focus{
         outline:none;

@@ -1,11 +1,13 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import promise from 'redux-promise';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
 import rootReducer from './rootReducer';
 
-let middleware = composeWithDevTools(applyMiddleware(thunk, promise));
-const store = createStore(rootReducer, middleware);
+import {reduxFirestore, getFirestore} from 'redux-firestore';
+import {reactReduxFirebase, getFirebase} from 'react-redux-firebase';
+import fbConfig from '../config/fbConfig';
+
+const middleware = composeWithDevTools(applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore}) ));
+const store = createStore(rootReducer, compose(middleware,reduxFirestore(fbConfig), reactReduxFirebase(fbConfig)) );
 
 export default store;

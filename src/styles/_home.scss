@@ -7,10 +7,7 @@
     top: 0;
     width: 200px;
     height: 200px;
-    z-index: 9000;
-    @media smallAndLess {
-        display: none;
-    }
+    z-index: 19;    
 }
 
 .ribbon a {
@@ -19,7 +16,7 @@
     width: 200%;
     right: -20%;
     top: -30%;
-    z-index: 901;
+    z-index: 19;
     cursor: pointer;
     background-color: #5c5c5c;
     color: #f0f0f0;

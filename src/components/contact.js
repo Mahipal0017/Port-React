@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col, Alert } from 'reactstrap';
+import { PulseLoader } from 'react-spinners';
 
 import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
@@ -8,6 +10,8 @@ import UIInputputFiled from '../components/UI/UIInputField';
 
 import { getRequiredField, getPhoneNumberField } from './modules/ConstraintsHelper';
 import * as Utility from './modules/Utility';
+
+import * as SendMessageActions from '../actions/contact';
 
 class Contact extends Component{
     constructor(props){
@@ -19,7 +23,9 @@ class Contact extends Component{
             company:"",
             phone:"",
             message:"",
+            successFlag: true,
         }
+        this.initialState=this.state;
     }
 
     getErrorMessage = (field, errors) => {
@@ -77,11 +83,45 @@ class Contact extends Component{
           this.setState({error: validationErrors});
         } else {
           delete this.state.error;
-          console.log("Passed Validation", this.state)
+          this.props.dispatch(SendMessageActions.sendMessage(this.state));
         }
     }
 
     render(){
+        let sendButton = (<button 
+                            type="submit" 
+                            className={`mt-3 core-btn ${this.state.isActivatedButton ? ' activatedButton' : " disabled"}`}
+                            onClick={this.handleSubmit}>
+                            Send Your Message
+                            </button>);
+        if(this.props.contactReducer.fetching){
+            sendButton=(<button 
+                            type="submit" 
+                            className={`mt-3 core-btn activatedButton loading be-inline`}
+                            style={{display:"inline-block"}}
+                            >
+                            <div className="be-inline pr-2">Sending</div>
+                            <div className="be-inline">
+                                <PulseLoader
+                                  sizeUnit={"px"}
+                                  size={5}
+                                  color={'#fff'}
+                                  loading={true}
+                                />
+                            </div>
+                        </button>);
+        }
+        let responseMessage=null;
+        
+        if(this.props.contactReducer.isSuccess){
+            responseMessage =(<Col xs="12" className="animated5 fadeIn"><Alert color="success">Thanks for being awesome!, will reach you soon!</Alert></Col>)            
+        }
+
+        if(this.props.contactReducer.isFailed){
+            responseMessage =(<Col xs="12" className="animated5 fadeIn"><Alert color="info">Sorry, something went wrong! You can e-mail/call me directly instead</Alert></Col>)            
+        }
+
+
         return (
             <div className="page-content">
                 <PageControls goto="/work" spanN="my work" classN="prev-page-arrow" />
@@ -118,6 +158,7 @@ class Contact extends Component{
                     </Row>
                     <Row className="col-md-12 be-center contact-form-container animated fadeInLeft">
                         <Col xs="12"><h4 className='pb-2'>I'm available for work, get in touch </h4></Col>
+                        {responseMessage}
                         <Col xs='12' md="6">
                             <UIInputputFiled 
                                 label="Name*"
@@ -175,12 +216,7 @@ class Contact extends Component{
                                 />
                         </Col>
                         <Col className="text-right">
-                            <button 
-                                type="submit" 
-                                className={`mt-3 core-btn ${this.state.isActivatedButton ? ' activatedButton' : " disabled"}`}
-                                onClick={this.handleSubmit}>
-                                Send Your Message
-                            </button>
+                            {sendButton}
                         </Col> 
                     </Row>
                     <Row className="social-items-container be-center animated fadeInRight">
@@ -188,20 +224,20 @@ class Contact extends Component{
                         <Col>
                             <a href="https://www.linkedin.com/in/mahipalr369" target='blank'>
                                 <button className="core-btn linkedInButton mr-2 mb-3">
-                                <i class="fab fa-linkedin-in pr-2"></i>LINKEDIN</button>
+                                <i className="fab fa-linkedin-in pr-2"></i>LINKEDIN</button>
                             </a>
                                 
                             <button className="core-btn fbButton mr-2 mb-3">
                             <i className="fab fa-facebook-f pr-2"></i>FACEBOOK</button>
                             
                             <button className="core-btn githubButton mr-2 mb-3">
-                            <i class="fab fa-github pr-2"></i>GITHUB</button>
+                            <i className="fab fa-github pr-2"></i>GITHUB</button>
 
                             <button className="core-btn twitterButton mr-2 mb-3">
-                            <i class="fab fa-twitter pr-2"></i>TWITTER</button>
+                            <i className="fab fa-twitter pr-2"></i>TWITTER</button>
                             
                             <button className="core-btn instaButton mr-2 mb-3">
-                            <i class="fab fa-instagram pr-2"></i>INSTAGRAM</button>
+                            <i className="fab fa-instagram pr-2"></i>INSTAGRAM</button>
                         </Col>
                     </Row>
                 </div>
@@ -210,4 +246,10 @@ class Contact extends Component{
     }
 };
 
-export default Contact;
+const mapStateToProps = (store) => {
+    return {
+        contactReducer: store.ContactReducer,
+    }
+}
+
+export default connect(mapStateToProps)(Contact);
