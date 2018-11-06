@@ -8,7 +8,7 @@ import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 import UIInputputFiled from '../components/UI/UIInputField';
 
-import { getRequiredField, getPhoneNumberField } from './modules/ConstraintsHelper';
+import { getRequiredField, getPhoneNumberField, getRequiredEmailAddress } from './modules/ConstraintsHelper';
 import * as Utility from './modules/Utility';
 
 import * as SendMessageActions from '../actions/contact';
@@ -23,10 +23,22 @@ class Contact extends Component{
             company:"",
             phone:"",
             message:"",
-            successFlag: true,
         }
-        this.initialState=this.state;
+    //    this.initialState = this.state;
     }
+
+    componentDidMount(){
+        document.title = "Mahipal Reddy/contact"
+    }
+
+    // resetState = () => {
+    //     const init = this.initialState;
+    //     this.setState(state=>{
+    //         return {
+    //             state: init
+    //         }
+    //     })
+    // }
 
     getErrorMessage = (field, errors) => {
         if (errors) {
@@ -52,7 +64,7 @@ class Contact extends Component{
     
         try {
             constraints["name"] = getRequiredField();
-            constraints["email"] = getRequiredField();
+            constraints["email"] = getRequiredEmailAddress();
             // constraints["company"] = getRequiredField();
             // constraints["phone"] = getPhoneNumberField();
             // constraints["message"] = getRequiredField();
@@ -85,6 +97,7 @@ class Contact extends Component{
           delete this.state.error;
           this.props.dispatch(SendMessageActions.sendMessage(this.state));
         }
+
     }
 
     render(){
@@ -116,14 +129,14 @@ class Contact extends Component{
         let responseMessage=null;
         
         if(this.props.contactReducer.isSuccess){
-            responseMessage =(<Col xs="12" className="animated5 fadeIn"><Alert color="success">Thanks for being awesome!, will reach you soon!</Alert></Col>)            
+            responseMessage =(<Col xs="12" className="animated5 fadeIn"><Alert color="success">Thanks for being awesome! Will reach you soon!</Alert></Col>)
+            this.props.contactReducer.isSuccess = false
         }
 
         if(this.props.contactReducer.isFailed){
-            responseMessage =(<Col xs="12" className="animated5 fadeIn"><Alert color="info">Sorry, something went wrong! You can e-mail/call me directly instead</Alert></Col>)            
+            responseMessage =(<Col xs="12" className="animated5 fadeIn"><Alert color="info">Sorry, something went wrong! You can e-mail/call me directly instead</Alert></Col>)
+            this.props.contactReducer.isFailed = false
         }
-
-
         return (
             <div className="page-content">
                 <PageControls goto="/work" spanN="my work" classN="prev-page-arrow" />

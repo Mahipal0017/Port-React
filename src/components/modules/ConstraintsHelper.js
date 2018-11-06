@@ -11,10 +11,6 @@ export const getRequiredField = (t) => {
 
 export const getPhoneNumberField = (t) => {
     return {
-                presence:{
-                    message: `${t("errors.emptyField")}`,
-                    allowEmpty: true,
-                },
                 format: {
                     pattern: `((\\(\\\d{3}\\) ?)|(\\\d{3}-))?\\\d{3}-\\\d{4}`,
                     flags: "gim",
@@ -22,3 +18,15 @@ export const getPhoneNumberField = (t) => {
                 }
             }
  }
+
+ export const getRequiredEmailAddress=(t)=>{
+    return{
+          presence: {message: "Please enter required field"},
+          format: {
+              pattern: `^[a-zA-Z0-9.!#$%&'*+/=?^_'{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$`,
+              flags: "i",
+              message: "Please enter valid email"
+          }
+      }
+    
+  }

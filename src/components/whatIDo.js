@@ -6,6 +6,11 @@ import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 
 class whatIDo extends Component {
+
+    componentDidMount(){
+        document.title = "Mahipal Reddy/What I Do"
+    }
+
     render() {
         return (
             <div className="page-content">

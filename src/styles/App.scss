@@ -178,6 +178,24 @@ body {
 }
 
 
+.body {
+  background-color: #333333;
+}
+
+.carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+}
+
+#text-carousel {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
+
+
+
 /* Work Section */
 /* .work-page {
   display:flex;
@@ -186,24 +204,24 @@ body {
 
 /* Contact Section */
 
-#footer {
-  bottom:0px;
-  height: 40px;
-  width: 100%;
-  background-color: #121e1f;
-  color: #7d8384;
-}
+// #footer {
+//   bottom:0px;
+//   height: 40px;
+//   width: 100%;
+//   background-color: #121e1f;
+//   color: #7d8384;
+// }
 
-.error{
-  border:2px solid #999;
-  padding: 5px;
-  margin: 5rem auto;;
-  max-width: 600px;
-  .core-btn{
-      margin: 2rem;
-      width:15rem;
-  }
-  @media smallAndUp{
-      padding: 5rem;
-  }
-}
+// .error{
+//   border:2px solid #999;
+//   padding: 5px;
+//   margin: 5rem auto;;
+//   max-width: 600px;
+//   .core-btn{
+//       margin: 2rem;
+//       width:15rem;
+//   }
+//   @media smallAndUp{
+//       padding: 5rem;
+//   }
+// }

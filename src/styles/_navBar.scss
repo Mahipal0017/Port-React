@@ -89,18 +89,18 @@
     color: #8a8a8a;
     text-align: center;
     font-size: 13px;
-    -moz-transition: -moz-transform .2s ease-out .9s,opacity .1s ease-out .95s;
-    -o-transition: -o-transform .2s ease-out .9s,opacity .1s ease-out .95s;
-    -webkit-transition: -webkit-transform .2s ease-out,opacity .1s ease-out;
+    -moz-transition: -moz-transform .5s ease-out .9s,opacity .4s ease-out .95s;
+    -o-transition: -o-transform .5s ease-out .9s,opacity .4s ease-out .95s;
+    -webkit-transition: -webkit-transform .5s ease-out,opacity .4s ease-out;
     -webkit-transition-delay: .9s,.95s;
-    transition: transform .2s ease-out .9s,opacity .1s ease-out .95s;
+    transition: transform .5s ease-out .9s,opacity .4s ease-out .95s;
 }
 
 #page-header.hidden nav {
-    -moz-transform: translate3d(0, -100%, 0);
-    -ms-transform: translate3d(0, -100%, 0);
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -130%, 0);
+    -ms-transform: translate3d(0, -130%, 0);
+    -webkit-transform: translate3d(0, -130%, 0);
+    transform: translate3d(0, -130%, 0);
 }
 
 #page-header.hidden nav:before {

@@ -1,10 +1,11 @@
-import React from 'react';
-import { Row, Col } from 'reactstrap';
+import React, {Component} from 'react';
+import { Row, Col, Media } from 'reactstrap';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 
 import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 import WorkItem from './workItem';
+import WorkCommentItem from './workCommentItem';
 
 import FLBlueLogo from '../extras/img/company-logos/FLBlue.png';
 import NSULogo from '../extras/img/company-logos/NSU.png';
@@ -14,7 +15,13 @@ import FactSetLogo from '../extras/img/company-logos/FactSet.png';
 import CTRLPlusRLogo from '../extras/img/company-logos/CTRLPlusR.png';
 
 
-const work = () => {
+class Work extends Component{
+
+  componentDidMount(){
+    document.title = "Mahipal Reddy/Work"
+  }
+
+  render(){
     return (
         <div className="page-content">
                 <PageControls goto="/contact" spanN="say hello" classN="next-page-arrow" />
@@ -27,8 +34,20 @@ const work = () => {
                             <h5 className="main-subheading">Portfolio</h5>
                         </Col>
                     </Row>
+                    {/* <Media>
+      <Media left href="#">
+        <Media object data-src="holder.js/64x64" alt="Generic placeholder image" />
+      </Media>
+      <Media body>
+        <Media heading>
+          Media heading
+        </Media>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      </Media>
+    </Media> */}
                     <Row className="be-center w-100 animated5 fadeIn">
                         <WorkItem />
+                        {/* <WorkCommentItem /> */}
                     </Row>
                     <Row className="pt-5 animated fadeInUp">
                       <Col className="text-center"><h3>Work Experience</h3></Col>
@@ -99,5 +118,6 @@ const work = () => {
         </div>
     );
 };
+}
 
-export default work;
+export default Work;

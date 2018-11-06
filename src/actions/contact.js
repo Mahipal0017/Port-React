@@ -1,6 +1,7 @@
 export const INIT_SEND_MESSAGE = "INIT_SEND_MESSAGE";
 export const SEND_MESSAGE_COMPLETE ="SEND_MESSAGE_COMPLETE";
 export const SEND_MESSAGE_FAILED = "SEND_MESSAGE_FAILED";
+export const RESET_CONTACT_FORM = "RESET_CONTACT_FORM";
 
 export function initSendMessage(){
     return {
@@ -17,7 +18,7 @@ export function sendMessage(data){
             ...data,
             createdAt: new Date(),
         }).then(()=>{
-            dispatch(sendMessageComplete());    
+            dispatch(sendMessageComplete());   
         }).catch( err => {
             dispatch(sendMessageFailed());
         })   

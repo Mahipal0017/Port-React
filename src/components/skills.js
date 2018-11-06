@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, Progress } from 'reactstrap';
+import { Row, Col, Progress, Button, Fade } from 'reactstrap';
 
 import Navigation from './common/navigation';
 import PageControls from "./common/pageControls";
@@ -38,40 +38,55 @@ const toolsList = [{s:vscodeImg, t:"VS Code" },
 {s:stripeImg, t:"Stripe" },
 {s:firebaseImg, t:"Firebase" }]
 
-const skills = () => {
-    return (
-        <div className="page-content">
-            <PageControls goto="/work" spanN="my work" classN="next-page-arrow" />
-            <PageControls goto="/about" spanN="about" classN="prev-page-arrow" />
-            <Navigation />
-            <div className="main-container">
-                <Row>
-                    <Col className="text-center animated fadeInDown">
-                        <h2 className="main-heading">Core Skills</h2>
-                        <h5 className="main-subheading">Some of my technology stack</h5>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className="progress-bars-container animated fadeInRight">
-                        {skillsList.map(item => <SkillItem skillName={item.s} skillValue={item.v}/>)}
-                    </Col>
-                </Row>
-                <Row className="tools mb-5 mt-5 ml-2 mr-2 animated fadeInLeft">
-                    <Col sm='12' className="pt-3 pb-3">
-                        <h4><strong>TOOLS I USE</strong></h4>
-                    </Col>
-                    <Col sm="12">
-                        <Row>
+class Skills extends Component{
+    state={
+        fadeIn: false
+    }
+
+    componentDidMount(){
+        document.title = "Mahipal Reddy/Skills"
+    }
+
+    toggle = () => {
+        this.setState(state=> {
+            return {
+                fadeIn: !state.fadeIn
+            }
+        })
+    }
+
+    render(){
+        return (
+            <div className="page-content">
+                <PageControls goto="/work" spanN="my work" classN="next-page-arrow" />
+                <PageControls goto="/about" spanN="about" classN="prev-page-arrow" />
+                <Navigation />
+                <div className="main-container">
+                    <Row>
+                        <Col className="text-center animated fadeInDown">
+                            <h2 className="main-heading">Core Skills</h2>
+                            <h5 className="main-subheading">Some of my technology stack</h5>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="progress-bars-container animated fadeInRight">
+                            {skillsList.map(item => <SkillItem skillName={item.s} skillValue={item.v}/>)}
+                        </Col>
+                    </Row>
+                    <Row className="mb-2 mt-5 ml-2 mr-2 animated fadeInLeft be-center">
+                        <Col>
+                            <button className="core-btn activatedButton" onClick={this.toggle}>TOOLS I USE</button>
+                        </Col>
+                    </Row>
+                    <Fade in={this.state.fadeIn} tag="h5" className="mt-3">
+                        <Row className="tools pt-3 pb-3 mr-5 ml-5">
                             {toolsList.map(item=><SkillToolItem srcName={item.s} toolName={item.t}/>)}
                         </Row>
-                    </Col>
-                    <Col md="6" sm="12">
-
-                    </Col>
-                </Row>
-            </div> 
-        </div>   
-    )
+                    </Fade>
+                </div> 
+            </div>   
+        )
+    }
 }
 
-export default skills;
+export default Skills;

@@ -6,6 +6,11 @@ import Navigation from './common/navigation';
 import backgroundImg from '../extras/img/bodybackground.jpg';
 
 class Home extends Component {
+
+  componentDidMount(){
+    document.title = "Mahipal Reddy"
+  }
+
   render() {
     return (
       <div >

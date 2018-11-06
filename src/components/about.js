@@ -10,6 +10,10 @@ import Resume from '../extras/Mahipal-Resume.docx';
 
 class About extends Component {
 
+    componentDidMount(){
+        document.title = "Mahipal Reddy/About"
+    }
+
     render(){
         return (
             <div className="page-content">
