@@ -49,7 +49,7 @@ class About extends Component {
                         <Col lg="8" className="pb-5">
                             <div className="about-text-container animated fadeInRight">
                                 <p>I'm comfortable throughout the stack, but my passion lies in the front end, at the intersection of application and user.
-                                <br/><br/>I have 4+ years of development experience in developing, maintaining web applications and also in building the products from scratch.
+                                <br/><br/>I have over 5 years of professional experience in developing, maintaining web applications and also in building the products from scratch.
                                 I have experience in developing and integrating with APIs, consuming the data from the service and presenting on the UI.
                                 I worked with a variety of frameworks and ReactJS is my most recent javascript framework. I developed the payment gateway by integrating with stripe vendor for Florida Blue client.
                                 I use my experience to be more than just a coder, connecting business requirements with modern technology.
