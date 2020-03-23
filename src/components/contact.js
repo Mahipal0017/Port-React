@@ -7,48 +7,12 @@ import { PulseLoader } from 'react-spinners';
 import Navigation from "./common/navigation";
 import PageControls from "./common/pageControls";
 import UIInputputFiled from '../components/UI/UIInputField';
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 
 import { getRequiredField, getPhoneNumberField, getRequiredEmailAddress } from './modules/ConstraintsHelper';
 import * as Utility from './modules/Utility';
 
 import * as SendMessageActions from '../actions/contact';
-
-// const styles = theme => ({
-//     cssLabel: {
-//       '&$cssFocused': {
-//         color: 'blue[500]',
-//       },
-//       fontFamily: [
-//         '-apple-system',
-//         'BlinkMacSystemFont',
-//         '"Segoe UI"',
-//         'Roboto',
-//         '"Helvetica Neue"',
-//         'Arial',
-//         'sans-serif',
-//         '"Apple Color Emoji"',
-//         '"Segoe UI Emoji"',
-//         '"Segoe UI Symbol"',
-//       ].join(','),
-//       '&:focus': {
-//         borderRadius: 4,
-//         borderColor: '#80bdff',
-//         boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
-//       },
-//     },
-//     cssUnderline: {
-//       '&:after': {
-//         borderBottomColor: 'blue[500]',
-//       },
-//     },
-//     cssOutlinedInput: {
-//       '&$cssFocused $notchedOutline': {
-//         borderColor: 'blue[500]',
-//       },
-//     },
-//   });
-
 
   
 class Contact extends Component{
@@ -176,14 +140,14 @@ class Contact extends Component{
             this.props.contactReducer.isFailed = false
         }
 
-        const styles = {
-            root: {
-              background: "white"
-            },
-            input: {
-              color: "white"
-            }
-          };
+        // const styles = {
+        //     root: {
+        //       background: "white"
+        //     },
+        //     input: {
+        //       color: "white"
+        //     }
+        //   };
 
         return (
             <div className="page-content">
@@ -223,76 +187,58 @@ class Contact extends Component{
                         <Col xs="12"><h4 className='pb-2'>I'm available for work, get in touch </h4></Col>
                         {responseMessage}
                         <Col xs='12' md="6">
-                            <TextField
-                                id="name"
-                                label="Name"
-                                autoComplete={false}
-                                className={styles.root}
-                                value={this.state['name']}
-                                onChange={(event) => this.update("name", event.target.value)}
-                                error={this.getErrorMessage("name", this.state.error)}
-                                helperText={this.getErrorMessage("name", this.state.error)}
-                                fullWidth={true}
-                                margin="normal"
-                                variant="filled"
+                            <UIInputputFiled 	                           
+                                label="Name"	
+                                name="name"                                
+                                placeholder="Name"	                                
+                                defaultValue={this.state['name']}	                                
+                                onValidatedChange= {this.update}	                                
+                                onChangeOverride={true} 	                                
+                                errorMessage={this.getErrorMessage("name", this.state.error)}
                             />
                         </Col>
                         <Col xs='12' md="6">
-                            <TextField
-                                id="company"
-                                label="Company"
-                                autoComplete={false}
-                                value={this.state['company']}
-                                onChange={(event) => this.update("company", event.target.value)}
-                                error={this.getErrorMessage("company", this.state.error)}
-                                helperText={this.getErrorMessage("company", this.state.error)}
-                                fullWidth={true}
-                                margin="normal"
-                                variant="filled"
+                            <UIInputputFiled 	                           
+                                label="Company"	
+                                name="company"                                
+                                placeholder="Company"	                                
+                                defaultValue={this.state['company']}	                                
+                                onValidatedChange= {this.update}	                                
+                                onChangeOverride={true} 	                                
+                                errorMessage={this.getErrorMessage("company", this.state.error)}
                             />
                         </Col>
                         <Col xs='12' md="6">
-                            <TextField
-                                id="email"
-                                label="E-mail"
-                                autoComplete={false}
-                                value={this.state['email']}
-                                onChange={(event) => this.update("email", event.target.value)}
-                                error={this.getErrorMessage("email", this.state.error)}
-                                helperText={this.getErrorMessage("email", this.state.error)}
-                                fullWidth={true}
-                                margin="normal"
-                                variant="filled"
-                            />
-                        </Col>
-                        <Col xs='12' md="6">
-                            <TextField
-                                id="phone"
-                                label="Phone Number"
-                                autoComplete={false}
-                                value={this.state['phone']}
-                                onChange={(event) => this.update("phone", event.target.value)}
-                                error={this.getErrorMessage("phone", this.state.error)}
-                                helperText={this.getErrorMessage("phone", this.state.error)}
-                                fullWidth={true}
-                                margin="normal"
-                                variant="filled"
+                            <UIInputputFiled 	                           
+                                label="E-mail"	
+                                name="email"                                
+                                placeholder="E-mail"	                                
+                                defaultValue={this.state['email']}	                                
+                                onValidatedChange= {this.update}	                                
+                                onChangeOverride={true} 	                                
+                                errorMessage={this.getErrorMessage("email", this.state.error)}
                             />
                         </Col>
                         <Col xs='12'>
-                            <TextField
-                                id="message"
-                                label="Message"
-                                autoComplete="false"
-                                multiline
-                                rows='4'
-                                value={this.state['message']}
-                                onChange={(event) => this.update("message", event.target.value)}
-                                error={this.getErrorMessage("message", this.state.error)}
-                                helperText={this.getErrorMessage("message", this.state.error)}
-                                fullWidth={true}
-                                margin="normal"
-                                variant="filled"
+                            <UIInputputFiled 	                           
+                                label="Phone Number"	
+                                name="phone"                                
+                                placeholder="Phone Number"	                                
+                                defaultValue={this.state['phone']}	                                
+                                onValidatedChange= {this.update}	                                
+                                onChangeOverride={true} 	                                
+                                errorMessage={this.getErrorMessage("phone", this.state.error)}
+                            />
+                        </Col>
+                        <Col xs='12'>
+                            <UIInputputFiled 	                           
+                                label="Message"	
+                                name="message"                                
+                                placeholder="Message"	                                
+                                defaultValue={this.state['message']}	                                
+                                onValidatedChange= {this.update}	                                
+                                onChangeOverride={true} 	                                
+                                errorMessage={this.getErrorMessage("message", this.state.error)}
                             />
                         </Col>
                         <Col className="text-right">
