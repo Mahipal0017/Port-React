@@ -38,7 +38,7 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "moment": "^2.22.2",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.13.1",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -113,8 +113,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "engines": {
-    "node": "8"
   }
 }
