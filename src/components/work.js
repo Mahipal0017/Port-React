@@ -57,9 +57,9 @@ class Work extends Component{
                           iconStyle={{ backgroundImage: `url(${FLBlueLogo})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%' }}
                           date="Aug'2017 - Present"
                         >
-                          <h4 className="vertical-timeline-element-subtitle">Sr.UI Developer</h4>
+                          <h4 className="vertical-timeline-element-subtitle">IT Developer</h4>
                           <div><span className="vertical-timeline-element-title">Florida Blue,</span><span> Jacksonville, FL</span></div>
-                          <p><strong><emp>Projects:</emp></strong> Digital Enrollments, Payment Center, Message Center</p>
+                          <p><strong><emp>Projects:</emp></strong> My Health Link, Truli Health, Digital Enrollments, Payment Center, Message Center</p>
                         </VerticalTimelineElement>
 
                         <VerticalTimelineElement
@@ -87,7 +87,7 @@ class Work extends Component{
                           date="May'2016 - Apr'2017"
                           iconStyle={{ backgroundImage: `url(${MedtronicLogo})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%' }}
                         >
-                          <h4 className="vertical-timeline-element-subtitle">Full-stack Developer</h4>
+                          <h4 className="vertical-timeline-element-subtitle">Full Stack Developer</h4>
                           <div><span className="vertical-timeline-element-title">Medtronics,</span><span> Minneapolis, MN</span></div>
                           <p><strong><emp>Projects:</emp></strong> Altare, Migration</p>
                         </VerticalTimelineElement>
@@ -97,7 +97,7 @@ class Work extends Component{
                           date="Jun'2015 - Nov'2015"
                           iconStyle={{ backgroundImage: `url(${FactSetLogo})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%' }}
                         >
-                          <h4 className="vertical-timeline-element-subtitle">UI/UX Developer I</h4>
+                          <h4 className="vertical-timeline-element-subtitle">Software Developer I</h4>
                           <div><span className="vertical-timeline-element-title">FactSet,</span><span> Hyderabad, India</span></div>
                           <p><strong><emp>Projects:</emp></strong> Core Product</p>
                         </VerticalTimelineElement>
@@ -107,7 +107,7 @@ class Work extends Component{
                           date="Jun'2013 - May'2015"
                           iconStyle={{ backgroundImage: `url(${CTRLPlusRLogo})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%' }}
                         >
-                          <h4 className="vertical-timeline-element-subtitle">Jr.UI/UX Developer</h4>
+                          <h4 className="vertical-timeline-element-subtitle">Jr.Software Developer</h4>
                           <div><span className="vertical-timeline-element-title">CTRL+R Technologies,</span><span> Hyderabad, India</span></div>
                           <p><strong><emp>Projects:</emp></strong> Multiple Projects</p>
                         </VerticalTimelineElement>
