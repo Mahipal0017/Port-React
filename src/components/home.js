@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 import 'react-circular-progressbar/dist/styles.css';
 import Navigation from './common/navigation';
 import backgroundImg from '../extras/img/bodybackground.jpg';
-
+import PathFinder from './pathFinder/pathFinder';
 class Home extends Component {
 
   componentDidMount(){
@@ -19,6 +19,7 @@ class Home extends Component {
           <Link to="/contact" className="">MAHIPAL REDDY</Link>
         </div>
         <div className="main-container">
+          <PathFinder />
           <div className="intro-text-container">
             <h1 className="intro-heading animated fadeInDownMultiple">  
             Full Stack
