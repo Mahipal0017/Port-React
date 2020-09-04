@@ -48,14 +48,23 @@ class About extends Component {
                         </Col>
                         <Col lg="8" className="pb-5">
                             <div className="about-text-container animated fadeInRight">
-                                <p>I'm comfortable throughout the stack, but my passion lies in the front end, at the intersection of application and user.
-                                <br/><br/>I have over 5 years of professional experience in developing, maintaining web applications and also in building the products from scratch.
-                                I have experience in developing and integrating with APIs, consuming the data from the service and presenting on the UI.
-                                I worked with a variety of frameworks and ReactJS is my most recent javascript framework. I developed the payment gateway by integrating with stripe vendor for Florida Blue client.
-                                I use my experience to be more than just a coder, connecting business requirements with modern technology.
-                                I also hold a degree in project management from the Valparaiso University.</p>
-                                <p>I am a good listner. I love to read the articles related to space, matter and universe.
-                                I am much intrested in travelling, exploring new places and socializing with new people.</p>
+                                <p> 
+                                    A passionate software engineer that loves to solve interesting challenges across the full-stack. 
+                                    I'm currently working as a Sr. IT Developer in Web and Mobile team at Florida Blue building the tools to delight customers with disabilities to manage their health data. 
+                                    I’m keen to work towards building scalable systems that allow visualizing complex real-world data for better decision making. 
+                                    I'm comfortable throughout the stack, but my passion lies in the front end, at the intersection of application and user. 
+                                </p>
+                                <p>
+                                    Over 6 years of professional experience in designing, developing and maintaining the single page web applications. 
+                                    I worked with a variety of javascript frameworks and ReactJS is my most recent javascript framework. 
+                                    I developed the payment gateway by integrating with stripe vendor for Florida Blue client where customers can manage payments and set recurring payments. 
+                                    I use my experience to be more than just a coder, connecting business requirements with modern technology.
+                                    I also hold a degree in Information Technology from the Valparaiso University.
+                                </p>
+                                <p>
+                                    I am a good listner. I love to read the articles related to space, matter and universe.
+                                    I am much intrested in travelling, exploring new places and socializing with new people.
+                                </p>
                                 <br/>
                             </div>
                             <div className="animated fadeInUp">
