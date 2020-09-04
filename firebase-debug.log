@@ -1,0 +1,80 @@
+[debug] [2020-09-04T22:49:05.696Z] ----------------------------------------------------------------------
+[debug] [2020-09-04T22:49:05.698Z] Command:       /usr/local/bin/firebase /Users/Mahi/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve
+[debug] [2020-09-04T22:49:05.698Z] CLI Version:   7.15.1
+[debug] [2020-09-04T22:49:05.698Z] Platform:      darwin
+[debug] [2020-09-04T22:49:05.698Z] Node Version:  v12.13.1
+[debug] [2020-09-04T22:49:05.704Z] Time:          Fri Sep 04 2020 18:49:05 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-09-04T22:49:05.704Z] ----------------------------------------------------------------------
+[debug] [2020-09-04T22:49:05.704Z] 
+[debug] [2020-09-04T22:49:05.711Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-04T22:49:05.711Z] > authorizing via signed-in user
+[debug] [2020-09-04T22:49:05.711Z] [iam] checking project findthemahi for permissions ["firebase.projects.get"]
+[debug] [2020-09-04T22:49:05.712Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/findthemahi:testIamPermissions  
+
+[debug] [2020-09-04T22:49:06.420Z] <<< HTTP RESPONSE 200
+[debug] [2020-09-04T22:49:06.422Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/findthemahi  
+ 
+[debug] [2020-09-04T22:49:06.800Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Mahi/Desktop/Port-React'...
+[info] 
+[debug] [2020-09-04T22:49:06.805Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/findthemahi/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: functions emulator started at http://localhost:5001
+[debug] [2020-09-04T22:49:07.504Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/Mahi/Desktop/Port-React/functions" for Cloud Functions...
+[debug] [2020-09-04T22:49:07.549Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-09-04T22:49:07.549Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-09-04T22:49:07.549Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-09-04T22:49:07.550Z] [worker-~diagnostic~-7195fdff-51d3-47dc-9859-6c233b63bd39]: Assigning socketPath: /var/folders/qt/y5xzyv3s5bz0q5c9n1lfs9500000gp/T/fire_emu_2508.sock
+[debug] [2020-09-04T22:49:07.551Z] [worker-~diagnostic~-7195fdff-51d3-47dc-9859-6c233b63bd39]: BUSY
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-09-04T22:49:07.799Z] [runtime-status] [2508] Functions runtime initialized. {"cwd":"/Users/Mahi/Desktop/Port-React/functions","node_version":"12.13.1"}
+[debug] [2020-09-04T22:49:07.800Z] [runtime-status] [2508] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-09-04T22:49:07.803Z] [runtime-status] [2508] Resolved module firebase-admin {"declared":true,"installed":true,"version":"6.0.0","resolution":"/Users/Mahi/Desktop/Port-React/functions/node_modules/firebase-admin/lib/index.js"}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-09-04T22:49:07.823Z] [worker-~diagnostic~-7195fdff-51d3-47dc-9859-6c233b63bd39]: exited
+[debug] [2020-09-04T22:49:07.823Z] [worker-~diagnostic~-7195fdff-51d3-47dc-9859-6c233b63bd39]: FINISHED
+[debug] [2020-09-04T22:51:57.427Z] ----------------------------------------------------------------------
+[debug] [2020-09-04T22:51:57.428Z] Command:       /usr/local/bin/firebase /Users/Mahi/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve
+[debug] [2020-09-04T22:51:57.429Z] CLI Version:   7.15.1
+[debug] [2020-09-04T22:51:57.429Z] Platform:      darwin
+[debug] [2020-09-04T22:51:57.429Z] Node Version:  v12.13.1
+[debug] [2020-09-04T22:51:57.429Z] Time:          Fri Sep 04 2020 18:51:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-09-04T22:51:57.429Z] ----------------------------------------------------------------------
+[debug] [2020-09-04T22:51:57.430Z] 
+[debug] [2020-09-04T22:51:57.436Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-04T22:51:57.436Z] > authorizing via signed-in user
+[debug] [2020-09-04T22:51:57.436Z] [iam] checking project findthemahi for permissions ["firebase.projects.get"]
+[debug] [2020-09-04T22:51:57.437Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/findthemahi:testIamPermissions  
+
+[debug] [2020-09-04T22:51:57.602Z] <<< HTTP RESPONSE 200
+[debug] [2020-09-04T22:51:57.604Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/findthemahi  
+ 
+[debug] [2020-09-04T22:51:57.869Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Mahi/Desktop/Port-React'...
+[info] 
+[debug] [2020-09-04T22:51:57.872Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/findthemahi/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: functions emulator started at http://localhost:5001
+[debug] [2020-09-04T22:51:58.264Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/Mahi/Desktop/Port-React/functions" for Cloud Functions...
+[debug] [2020-09-04T22:51:58.302Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-09-04T22:51:58.302Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-09-04T22:51:58.302Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-09-04T22:51:58.303Z] [worker-~diagnostic~-b7013ec2-efb9-4215-a855-3b0b652afa0e]: Assigning socketPath: /var/folders/qt/y5xzyv3s5bz0q5c9n1lfs9500000gp/T/fire_emu_2761.sock
+[debug] [2020-09-04T22:51:58.303Z] [worker-~diagnostic~-b7013ec2-efb9-4215-a855-3b0b652afa0e]: BUSY
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-09-04T22:51:58.549Z] [runtime-status] [2761] Functions runtime initialized. {"cwd":"/Users/Mahi/Desktop/Port-React/functions","node_version":"12.13.1"}
+[debug] [2020-09-04T22:51:58.550Z] [runtime-status] [2761] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-09-04T22:51:58.552Z] [runtime-status] [2761] Resolved module firebase-admin {"declared":true,"installed":true,"version":"6.0.0","resolution":"/Users/Mahi/Desktop/Port-React/functions/node_modules/firebase-admin/lib/index.js"}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-09-04T22:51:58.572Z] [worker-~diagnostic~-b7013ec2-efb9-4215-a855-3b0b652afa0e]: exited
+[debug] [2020-09-04T22:51:58.572Z] [worker-~diagnostic~-b7013ec2-efb9-4215-a855-3b0b652afa0e]: FINISHED
